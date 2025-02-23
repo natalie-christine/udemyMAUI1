@@ -2,6 +2,10 @@
 
 namespace udemyMAUI1
 {
+
+    /// <summary>
+    /// Super Cooles Programm
+    /// </summary>
     public static class MauiProgram
     {
         public static MauiApp CreateMauiApp()
