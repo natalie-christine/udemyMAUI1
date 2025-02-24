@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="udemyMAUI1.Tabb1"
+             Title="Tabb1"
+            BarBackgroundColor="DarkMagenta"
+            BarTextColor="DarkGrey"
+            SelectedTabColor="LightPink"
+            UnselectedTabColor="DarkOrchid"
+            >
+    <ContentPage Title="Stuff1">
+        <StackLayout>
+            <Label Text="Tab1" />
+            <Label Text="Tab2" />
+            <Label Text="Tab3" />
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Stuff2">
+        <StackLayout>
+            <Label Text="One"/>
+            <Label Text="Two"/>
+            <Label Text="Three"/>
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Stuff3">
+        <StackLayout>
+            <Label Text="Nichts" />
+            <Label Text="Hier" />
+            <Label Text="Zusehen" />
+        </StackLayout>
+    </ContentPage>
+
+
+</TabbedPage>

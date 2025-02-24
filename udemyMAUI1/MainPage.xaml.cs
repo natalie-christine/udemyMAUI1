@@ -11,14 +11,17 @@
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
-            count++;
+            Navigation.PushAsync(new Page1());
+        }
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+        private void OnTabbedClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Tabb1());
+        }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+        private void OnFlyoutPageBtnClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new FlyoutPage1());
         }
     }
 

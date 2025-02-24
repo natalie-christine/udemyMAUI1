@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="udemyMAUI1.Page1"
+             Title="Page1">
+    
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            BackgroundColor="DarkGreen" />
+        <Label
+            Text="blahblahh blahh"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            BackgroundColor="BlueViolet"
+            TextColor="Coral"/>
+
+
+        <Button
+            Background="#8474FA" 
+                FontSize="Large" 
+                BorderWidth="2" 
+                BackgroundColor="#2AB3D7" 
+                Text="Hier könnte ihre Werbung stehen."
+                TextColor="White"
+                Clicked="Button_Clicked"
+        />
+    </VerticalStackLayout>
+</ContentPage>
