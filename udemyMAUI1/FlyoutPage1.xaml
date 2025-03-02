@@ -6,26 +6,37 @@
                 FlyoutLayoutBehavior="Split">
 
     <FlyoutPage.Flyout>
-        <ContentPage Title="Menu">
+        <ContentPage Title="Menu"
+                     Padding="20">
             <Label Text="Juuhhhhuuuuuuuuuu!"
                    BackgroundColor="#8EE3C3"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"/>
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="End"
+                   Padding="10"
+                   />
         </ContentPage>
+        <Image Source="dotnet_bot.png"/>
+"
     </FlyoutPage.Flyout>
     
     <FlyoutPage.Detail>
 
         <ContentPage Title="Page 1">
 
-            <StackLayout>
+            <StackLayout
+                Spacing="20"
+                Orientation="Horizontal"
+                VerticalOptions="FillAndExpand">
                 <Label Text="Page 1"
+                       HorizontalOptions="FillAndExpand"
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Center"/>
                 <Label Text="Page 2"
+                       HorizontalOptions="FillAndExpand"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"/>
                 <Label Text="Page 3"
+                       HorizontalOptions="FillAndExpand"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"/>
             </StackLayout>

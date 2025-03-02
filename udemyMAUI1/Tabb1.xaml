@@ -9,7 +9,8 @@
             UnselectedTabColor="DarkOrchid"
             >
     <ContentPage Title="Stuff1">
-        <StackLayout>
+        <StackLayout
+            Spacing="20">
             <Label Text="Tab1" />
             <Label Text="Tab2" />
             <Label Text="Tab3" />
@@ -17,7 +18,8 @@
     </ContentPage>
 
     <ContentPage Title="Stuff2">
-        <StackLayout>
+        <StackLayout
+            Spacing="20">
             <Label Text="One"/>
             <Label Text="Two"/>
             <Label Text="Three"/>
@@ -25,7 +27,8 @@
     </ContentPage>
 
     <ContentPage Title="Stuff3">
-        <StackLayout>
+        <StackLayout
+            Spacing="20">
             <Label Text="Nichts" />
             <Label Text="Hier" />
             <Label Text="Zusehen" />
