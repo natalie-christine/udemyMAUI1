@@ -30,6 +30,18 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="TabbedBtn"
+                Text="Click me" 
+                Clicked="OnTabbedClicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="FlyoutBtn"
+                Text="Click me" 
+                Clicked="OnFlyoutClicked"
+                HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
 
