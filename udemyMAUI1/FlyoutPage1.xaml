@@ -15,8 +15,6 @@
                    Padding="10"
                    />
         </ContentPage>
-        <Image Source="dotnet_bot.png"/>
-"
     </FlyoutPage.Flyout>
     
     <FlyoutPage.Detail>
