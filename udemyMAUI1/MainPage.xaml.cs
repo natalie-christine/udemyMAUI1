@@ -18,11 +18,6 @@
         {
             Navigation.PushAsync(new Tabb1());
         }
-
-        private void OnFlyoutPageBtnClicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new FlyoutPage1());
-        }
     }
 
 }

@@ -6,14 +6,7 @@
         {
             InitializeComponent();
 
-           var navPage =  new NavigationPage (new MainPage());
-
-            navPage.BarBackground = Colors.Blue;
-            navPage.BarTextColor = Colors.SlateBlue;
-
-            MainPage = navPage ;
-
-                
+            MainPage = new AppShell();
         }
     }
 }

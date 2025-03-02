@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="udemyMAUI1.TabbedPage2"
+             Title="TabbedPage2" BarBackground="#CFA991" SelectedTabColor="#FFFFFF">
+
+    <ContentPage Title="Page 1">
+        <VerticalStackLayout>
+            <Label Text="Hello World 1" />
+        </VerticalStackLayout>
+    </ContentPage>
+    <ContentPage Title="Page 2">
+        <VerticalStackLayout>
+            <Label Text="Hello World 2" />
+        </VerticalStackLayout>
+    </ContentPage>
+    <ContentPage Title="Page 3">
+        <VerticalStackLayout>
+            <Label Text="Hello World 3" />
+        </VerticalStackLayout>
+    </ContentPage>
+    
+</TabbedPage>

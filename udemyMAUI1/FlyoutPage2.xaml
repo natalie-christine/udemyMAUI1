@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="udemyMAUI1.FlyoutPage2"
+             Title="FlyoutPage2"
+            >
+
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Test">
+            <StackLayout>
+                <Button Text="Punkt A"></Button>
+                <Label Text="Hallo Welt" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <ContentPage>
+            <Label Text="Hallo Welt Detail" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+        </ContentPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
