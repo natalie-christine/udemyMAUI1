@@ -11,14 +11,11 @@
         <StackLayout
             Spacing="20">
             <Label Text="Tab1" />
-            <RadioButton CheckedChanged="RadioButton_CheckedChanged1" 
-                         Content="Option 1"/> 
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 1"/> 
             <Label Text="Tab2" />
-            <RadioButton CheckedChanged="RadioButton_CheckedChanged2" 
-             Content="Option 2"/>
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 2"/>
             <Label Text="Tab3" />
-            <RadioButton CheckedChanged="RadioButton_CheckedChanged3" 
-             Content="Option 3"/>
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 3"/>
         </StackLayout>
     </ContentPage>
 
@@ -30,12 +27,12 @@
             <SwipeView>
                 <SwipeView.LeftItems>
                     <SwipeItems>
-                        <SwipeItem Text="Delete" IconImageSource="delete.png" BackgroundColor="LightCoral" />
+                        <SwipeItem Text="Delete" IconImageSource="candy_1.png" BackgroundColor="LightCoral" />
                     </SwipeItems>
                 </SwipeView.LeftItems>
                 <SwipeView.RightItems>
                     <SwipeItems>
-                        <SwipeItem Text="Flag" IconImageSource="flag.png" BackgroundColor="LightBlue" />
+                        <SwipeItem Text="Flag" IconImageSource="candy_2.png" BackgroundColor="LightBlue" />
                     </SwipeItems>
                 </SwipeView.RightItems>
                 <SwipeView.Content>

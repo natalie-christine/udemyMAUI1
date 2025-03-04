@@ -7,9 +7,10 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <Image
+            <ImageButton
                 Source="dotnet_bot.png"
                 HeightRequest="185"
+                Clicked="ImageButton_Clicked"
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 

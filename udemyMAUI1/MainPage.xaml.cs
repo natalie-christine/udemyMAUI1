@@ -23,6 +23,11 @@
         {
             Navigation.PushAsync(new FlyoutPage1());
         }
+
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Hallo", "Welt :)", "Schließen");
+        }
     }
 
 }

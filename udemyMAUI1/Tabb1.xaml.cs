@@ -7,19 +7,17 @@ public partial class Tabb1 : TabbedPage
 		InitializeComponent();
 	}
 
-    private void RadioButton_CheckedChanged1(object sender, CheckedChangedEventArgs e)
+    private void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        RadioButton rb = (RadioButton)sender;
+        if (e.Value)
+        { 
+            DisplayAlert("Hallo", "Option: " + rb.Content, "Schlieﬂen");
+        }
+    }
+
+    private void searchControl_SearchButtonPressed(object sender, EventArgs e)
     {
 
     }
-    private void RadioButton_CheckedChanged2(object sender, CheckedChangedEventArgs e)
-    {
-
-    }
-    private void RadioButton_CheckedChanged3(object sender, CheckedChangedEventArgs e)
-    {
-
-    }
-
-
-
 }
