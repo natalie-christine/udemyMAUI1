@@ -9,7 +9,7 @@
         <ContentPage Title="Menu"
                      Padding="20">
             <Label Text="Juuhhhhuuuuuuuuuu!"
-                   BackgroundColor="#8EE3C3"
+                   BackgroundColor="#8ED1E3"
                    HorizontalTextAlignment="Start"
                    VerticalTextAlignment="End"
                    Padding="10"
@@ -26,14 +26,17 @@
                 Orientation="Horizontal"
                 VerticalOptions="FillAndExpand">
                 <Label Text="Page 1"
+                       BackgroundColor="Navy"
                        HorizontalOptions="FillAndExpand"
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Center"/>
                 <Label Text="Page 2"
+                       BackgroundColor="#3030BB"
                        HorizontalOptions="FillAndExpand"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"/>
                 <Label Text="Page 3"
+                       BackgroundColor="#4747F8"
                        HorizontalOptions="FillAndExpand"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"/>

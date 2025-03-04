@@ -2,7 +2,6 @@
 <TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="udemyMAUI1.Tabb1"
-             Title="Tabb1"
             BarBackgroundColor="DarkMagenta"
             BarTextColor="DarkGrey"
             SelectedTabColor="LightPink"
@@ -12,8 +11,14 @@
         <StackLayout
             Spacing="20">
             <Label Text="Tab1" />
+            <RadioButton CheckedChanged="RadioButton1_CheckedChanged" 
+                         Content="Option 1"/> 
             <Label Text="Tab2" />
+            <RadioButton CheckedChanged="RadioButton2_CheckedChanged" 
+             Content="Option 2"/>
             <Label Text="Tab3" />
+            <RadioButton CheckedChanged="RadioButton3_CheckedChanged" 
+             Content="Option 3"/>
         </StackLayout>
     </ContentPage>
 
@@ -34,6 +39,4 @@
             <Label Text="Zusehen" />
         </StackLayout>
     </ContentPage>
-
-
 </TabbedPage>
