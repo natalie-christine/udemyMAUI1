@@ -20,4 +20,28 @@ public partial class Tabb1 : TabbedPage
     {
 
     }
+
+    private void slider_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        if (slider != null)
+        {
+            sliderLabel.Text = Math.Round(slider.Value).ToString();
+        }
+    }
+
+    private void ImageButtonDown_Clicked(object sender, EventArgs e)
+    {
+        if (slider != null)
+        {
+            slider.Value--;
+        }
+    }
+
+    private void ImageButtonUp_Clicked(object sender, EventArgs e)
+    {
+        if (slider != null)
+        {
+            slider.Value++;
+        }
+    }
 }
