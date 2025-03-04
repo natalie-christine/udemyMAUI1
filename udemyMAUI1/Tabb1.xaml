@@ -39,7 +39,9 @@
                     <Label Text="Swipe me" />
                 </SwipeView.Content>
             </SwipeView>
-                
+
+            <ActivityIndicator x:Name="indicator" IsRunning="False" />
+
             <Label Text="One"/>
             <Label Text="Two"/>
             <Label Text="Three"/>

@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace udemyMAUI1;
 
 public partial class Tabb1 : TabbedPage
@@ -18,7 +20,9 @@ public partial class Tabb1 : TabbedPage
 
     private void searchControl_SearchButtonPressed(object sender, EventArgs e)
     {
-
+        indicator.IsRunning = !indicator.IsRunning;
+        //DisplayAlert("Suche", "Vielen Dank für Ihre Geduld", "Schließen");
+        //indicator.IsRunning = false;
     }
 
     private void slider_ValueChanged(object sender, ValueChangedEventArgs e)
