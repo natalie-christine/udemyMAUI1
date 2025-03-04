@@ -11,13 +11,13 @@
         <StackLayout
             Spacing="20">
             <Label Text="Tab1" />
-            <RadioButton CheckedChanged="RadioButton1_CheckedChanged" 
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged1" 
                          Content="Option 1"/> 
             <Label Text="Tab2" />
-            <RadioButton CheckedChanged="RadioButton2_CheckedChanged" 
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged2" 
              Content="Option 2"/>
             <Label Text="Tab3" />
-            <RadioButton CheckedChanged="RadioButton3_CheckedChanged" 
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged3" 
              Content="Option 3"/>
         </StackLayout>
     </ContentPage>
@@ -25,6 +25,24 @@
     <ContentPage Title="Stuff2">
         <StackLayout
             Spacing="20">
+            <SearchBar x:Name="searchControl" Placeholder="Search for stuff" 
+                       SearchButtonPressed="searchControl_SearchButtonPressed"/>
+            <SwipeView>
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Delete" IconImageSource="delete.png" BackgroundColor="LightCoral" />
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+                <SwipeView.RightItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Flag" IconImageSource="flag.png" BackgroundColor="LightBlue" />
+                    </SwipeItems>
+                </SwipeView.RightItems>
+                <SwipeView.Content>
+                    <Label Text="Swipe me" />
+                </SwipeView.Content>
+            </SwipeView>
+                
             <Label Text="One"/>
             <Label Text="Two"/>
             <Label Text="Three"/>
