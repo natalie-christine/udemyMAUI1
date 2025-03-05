@@ -61,7 +61,7 @@
                     ValueChanged="slider_ValueChanged" />
 
             <Label x:Name="sliderLabel" />
-
+            
             <HorizontalStackLayout>
                 <ImageButton Source="button_down.png" WidthRequest="40" Clicked="ImageButtonDown_Clicked" />
                 <ImageButton Source="button_up.png" WidthRequest="40" Clicked="ImageButtonUp_Clicked" />
@@ -72,4 +72,23 @@
 
         </StackLayout>
     </ContentPage>
+
+    <ContentPage Title="Stuff4">
+            <StackLayout Spacing="20">
+            <ListView>
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>First</x:String>
+                        <x:String>Second</x:String>
+                        <x:String>Third</x:String>
+                    </x:Array>
+                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        </ContentPage>
 </TabbedPage>
