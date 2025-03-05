@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="udemyMAUI1.Page1"
              Title="Page1">
-    
+
     <VerticalStackLayout>
         <Button
             Margin="20"
@@ -28,60 +28,64 @@
             <Button Text="Button 9" Grid.Row="2" Grid.Column="2" />
         </Grid>
 
-        <HorizontalStackLayout Spacing="40" HorizontalOptions="CenterAndExpand">
-            <VerticalStackLayout HorizontalOptions="CenterAndExpand">
-                <CarouselView IndicatorView="indicatorView1">
-                    <CarouselView.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>candy_1.png</x:String>
-                            <x:String>candy_2.png</x:String>
-                            <x:String>candy_3.png</x:String>
-                            <x:String>candy_4.png</x:String>
-                            <x:String>candy_5.png</x:String>
-                            <x:String>candy_6.png</x:String>
-                            <x:String>candy_7.png</x:String>
-                            <x:String>candy_8.png</x:String>
-                        </x:Array>
-                    </CarouselView.ItemsSource>
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout>
-                                <Frame Margin="20" BorderColor="DarkGray" CornerRadius="5" HasShadow="True" HeightRequest="100" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-                                    <Image Source="{Binding .}" />
-                                </Frame>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
-                <IndicatorView x:Name="indicatorView1" HorizontalOptions="Center" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" />
-            </VerticalStackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="20" Spacing="20">
+            <Frame HorizontalOptions="CenterAndExpand">
+                <VerticalStackLayout HorizontalOptions="CenterAndExpand">
+                    <CarouselView IndicatorView="indicatorView1">
+                        <CarouselView.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>candy_1.png</x:String>
+                                <x:String>candy_2.png</x:String>
+                                <x:String>candy_3.png</x:String>
+                                <x:String>candy_4.png</x:String>
+                                <x:String>candy_5.png</x:String>
+                                <x:String>candy_6.png</x:String>
+                                <x:String>candy_7.png</x:String>
+                                <x:String>candy_8.png</x:String>
+                            </x:Array>
+                        </CarouselView.ItemsSource>
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Frame Margin="20" BorderColor="DarkGray" CornerRadius="5" HasShadow="True" HeightRequest="100" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                        <Image Source="{Binding .}" />
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <IndicatorView x:Name="indicatorView1" HorizontalOptions="Center" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" />
+                </VerticalStackLayout>
+            </Frame>
 
-            <VerticalStackLayout HorizontalOptions="CenterAndExpand" Rotation="90">
-                <CarouselView IndicatorView="indicatorView2">
-                    <CarouselView.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>candy_1.png</x:String>
-                            <x:String>candy_2.png</x:String>
-                            <x:String>candy_3.png</x:String>
-                            <x:String>candy_4.png</x:String>
-                            <x:String>candy_5.png</x:String>
-                            <x:String>candy_6.png</x:String>
-                            <x:String>candy_7.png</x:String>
-                            <x:String>candy_8.png</x:String>
-                        </x:Array>
-                    </CarouselView.ItemsSource>
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout>
-                                <Frame Margin="20" BorderColor="DarkGray" CornerRadius="5" HasShadow="True" HeightRequest="100" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-                                    <Image Source="{Binding .}" />
-                                </Frame>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
-                <IndicatorView x:Name="indicatorView2" HorizontalOptions="Center" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" />
-            </VerticalStackLayout>
-        </HorizontalStackLayout>
+            <Frame HorizontalOptions="CenterAndExpand">
+                <VerticalStackLayout HorizontalOptions="CenterAndExpand"  Rotation="90">
+                    <CarouselView IndicatorView="indicatorView2">
+                        <CarouselView.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>candy_1.png</x:String>
+                                <x:String>candy_2.png</x:String>
+                                <x:String>candy_3.png</x:String>
+                                <x:String>candy_4.png</x:String>
+                                <x:String>candy_5.png</x:String>
+                                <x:String>candy_6.png</x:String>
+                                <x:String>candy_7.png</x:String>
+                                <x:String>candy_8.png</x:String>
+                            </x:Array>
+                        </CarouselView.ItemsSource>
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Frame Margin="20" BorderColor="DarkGray" CornerRadius="5" HasShadow="True" HeightRequest="100" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                        <Image Source="{Binding .}" Rotation="-90" />
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <IndicatorView x:Name="indicatorView2" HorizontalOptions="Center" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" />
+                </VerticalStackLayout>
+            </Frame>
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>
