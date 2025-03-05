@@ -48,4 +48,9 @@ public partial class Tabb1 : TabbedPage
             slider.Value++;
         }
     }
+
+    private void Picker_HandlerChanged(object sender, EventArgs e)
+    {
+        candyImage.Source = picker.SelectedItem.ToString();
+    }
 }

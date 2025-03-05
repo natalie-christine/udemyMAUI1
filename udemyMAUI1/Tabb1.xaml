@@ -42,9 +42,23 @@
 
             <ActivityIndicator x:Name="indicator" IsRunning="False" />
 
-            <Label Text="One"/>
-            <Label Text="Two"/>
-            <Label Text="Three"/>
+            <Picker x:Name="picker" VerticalOptions="Center"  SelectedIndexChanged="Picker_HandlerChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>candy_1.png</x:String>
+                        <x:String>candy_2.png</x:String>
+                        <x:String>candy_3.png</x:String>
+                        <x:String>candy_4.png</x:String>
+                        <x:String>candy_5.png</x:String>
+                        <x:String>candy_6.png</x:String>
+                        <x:String>candy_7.png</x:String>
+                        <x:String>candy_8.png</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Frame HeightRequest="100">
+                <Image x:Name="candyImage" Source="candy_1.png."></Image>
+            </Frame>
         </StackLayout>
     </ContentPage>
 
