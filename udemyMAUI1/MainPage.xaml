@@ -8,7 +8,7 @@
         <Color x:Key="Secondary">#83A0CD</Color>
         <Color x:Key="Tertiary">#000000</Color>
     </ContentPage.Resources>
-    
+
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
@@ -28,7 +28,7 @@
 
             <BoxView VerticalOptions="FillAndExpand"></BoxView>
 
-            <Grid Margin="20" ColumnDefinitions=".5*,.5*" RowDefinitions="*,*,*" RowSpacing="20" ColumnSpacing="10">
+            <Grid Margin="20,0,20,0" ColumnDefinitions=".5*,.5*" RowDefinitions="*,*,*" RowSpacing="20" ColumnSpacing="10">
                 <Button
                         x:Name="CounterBtn"
                         Grid.Row="0" Grid.Column="0"
@@ -53,18 +53,39 @@
                         TextColor="{ StaticResource Tertiary }"
                         Clicked="OnFlyoutClicked" />
 
-                <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
+                <Frame x:Name="SliderContainer" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
                     <VerticalStackLayout Spacing="15" VerticalOptions="Center">
                         <Label FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Text="Color Maker" />
                         <Label Text="Red Value:" />
-                        <Slider x:Name="sldRed" MaximumTrackColor="{ StaticResource Tertiary }" MinimumTrackColor="{ StaticResource Secondary }" ThumbColor="{ StaticResource Primary }" />
+                        <Slider x:Name="sldRed" MaximumTrackColor="{ StaticResource Tertiary }" MinimumTrackColor="{ StaticResource Secondary }" ThumbColor="{ StaticResource Primary }" ValueChanged="Slider_ValueChanged" />
                         <Label Text="Green Value:" />
-                        <Slider x:Name="sldGreen" MaximumTrackColor="{ StaticResource Tertiary }" MinimumTrackColor="{ StaticResource Secondary }" ThumbColor="{ StaticResource Primary }" />
+                        <Slider x:Name="sldGreen" MaximumTrackColor="{ StaticResource Tertiary }" MinimumTrackColor="{ StaticResource Secondary }" ThumbColor="{ StaticResource Primary }" ValueChanged="Slider_ValueChanged" />
                         <Label Text="Blue Value:" />
-                        <Slider x:Name="sldBlue" MaximumTrackColor="{ StaticResource Tertiary }" MinimumTrackColor="{ StaticResource Secondary }" ThumbColor="{ StaticResource Primary }" />
+                        <Slider x:Name="sldBlue" MaximumTrackColor="{ StaticResource Tertiary }" MinimumTrackColor="{ StaticResource Secondary }" ThumbColor="{ StaticResource Primary }" ValueChanged="Slider_ValueChanged" />
                     </VerticalStackLayout>
                 </Frame>
             </Grid>
+
+            <Frame Margin="20,0,20,0" HorizontalOptions="FillAndExpand">
+                <HorizontalStackLayout HorizontalOptions="Center">
+
+                    <Label Text="Random Color" HorizontalTextAlignment="End" VerticalOptions="Center" />
+                    <ImageButton
+                            Margin="20,0,60,0"
+                            HeightRequest="25"
+                            Source="potion_violet.png"
+                            VerticalOptions="Center"
+                            WidthRequest="25" />
+                    <Label x:Name="lblHex" Text="HEX Value: #000000" HorizontalTextAlignment="End" VerticalOptions="Center" />
+                    <ImageButton
+                        Margin="20,0,0,0"
+                        HeightRequest="25"
+                        Source="potion_blue.png"
+                        VerticalOptions="Center"
+                        WidthRequest="25" />
+
+                </HorizontalStackLayout>
+            </Frame>
 
         </VerticalStackLayout>
     </ScrollView>
