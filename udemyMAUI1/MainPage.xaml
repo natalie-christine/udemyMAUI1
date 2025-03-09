@@ -3,6 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="udemyMAUI1.MainPage">
 
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#0061B6</Color>
+        <Color x:Key="Secondary">#83A0CD</Color>
+        <Color x:Key="Tertiary">#000000</Color>
+    </ContentPage.Resources>
+    
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
@@ -15,38 +21,51 @@
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
             <Label
-                Text="Hallo Welt!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" HorizontalOptions="Start" />
-
-            <Label
                 Text="Welcome to &#10;.NET Multi-platform App UI"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
             <BoxView VerticalOptions="FillAndExpand"></BoxView>
-            
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Spacing="30">
+
+            <Grid Margin="20" ColumnDefinitions=".5*,.5*" RowDefinitions="*,*,*" RowSpacing="20" ColumnSpacing="10">
                 <Button
-                    x:Name="CounterBtn"
-                    Text="Page 1" 
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    Clicked="OnCounterClicked"
-                    HorizontalOptions="FillAndExpand" />
+                        x:Name="CounterBtn"
+                        Grid.Row="0" Grid.Column="0"
+                        Text="Page 1"
+                        BackgroundColor="{ StaticResource Secondary }"
+                        TextColor="{ StaticResource Tertiary }"
+                        Clicked="OnCounterClicked" />
 
                 <Button
-                    x:Name="TabbedBtn"
-                    Text="Tabbed" 
-                    Clicked="OnTabbedClicked"
-                    HorizontalOptions="FillAndExpand" />
+                        x:Name="TabbedBtn"
+                        Grid.Row="1" Grid.Column="0"
+                        Text="Tabbed" 
+                        BackgroundColor="{ StaticResource Secondary }"
+                        TextColor="{ StaticResource Tertiary }"
+                        Clicked="OnTabbedClicked" />
 
                 <Button
-                    x:Name="FlyoutBtn"
-                    Text="Flyout"
-                    Clicked="OnFlyoutClicked"
-                    HorizontalOptions="FillAndExpand" />
-            </StackLayout>
+                        x:Name="FlyoutBtn"
+                        Grid.Row="2" Grid.Column="0"
+                        Text="Flyout"
+                        BackgroundColor="{ StaticResource Secondary }"
+                        TextColor="{ StaticResource Tertiary }"
+                        Clicked="OnFlyoutClicked" />
+
+                <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
+                    <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                        <Label FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Text="Color Maker" />
+                        <Label Text="Red Value:" />
+                        <Slider x:Name="sldRed" MaximumTrackColor="{ StaticResource Tertiary }" MinimumTrackColor="{ StaticResource Secondary }" ThumbColor="{ StaticResource Primary }" />
+                        <Label Text="Green Value:" />
+                        <Slider x:Name="sldGreen" MaximumTrackColor="{ StaticResource Tertiary }" MinimumTrackColor="{ StaticResource Secondary }" ThumbColor="{ StaticResource Primary }" />
+                        <Label Text="Blue Value:" />
+                        <Slider x:Name="sldBlue" MaximumTrackColor="{ StaticResource Tertiary }" MinimumTrackColor="{ StaticResource Secondary }" ThumbColor="{ StaticResource Primary }" />
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+
         </VerticalStackLayout>
     </ScrollView>
 
