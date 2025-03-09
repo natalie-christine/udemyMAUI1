@@ -75,7 +75,8 @@
                             HeightRequest="25"
                             Source="potion_violet.png"
                             VerticalOptions="Center"
-                            WidthRequest="25" />
+                            WidthRequest="25" 
+                        Clicked="btnRandom_Clicked"/>
                     <Label  Text="HEX Value:" HorizontalTextAlignment="End" VerticalOptions="Center" />
                     <Label x:Name="lblHex" Text="#000000" HorizontalTextAlignment="End" VerticalOptions="Center" />
                     <ImageButton
@@ -83,10 +84,12 @@
                         HeightRequest="25"
                         Source="potion_blue.png"
                         VerticalOptions="Center"
-                        WidthRequest="25" />
+                        WidthRequest="25" 
+                        Clicked="ImageButton_Clicked_1"/>
 
                 </HorizontalStackLayout>
             </Frame>
+
 
         </VerticalStackLayout>
     </ScrollView>
