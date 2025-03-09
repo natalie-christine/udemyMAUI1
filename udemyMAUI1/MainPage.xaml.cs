@@ -1,4 +1,6 @@
-﻿namespace udemyMAUI1
+﻿using System.Runtime.InteropServices;
+
+namespace udemyMAUI1
 {
     public partial class MainPage : ContentPage
     {
@@ -41,7 +43,10 @@
 
         private void SetColor(Color color)
         {
-            SliderContainer.BackgroundColor = color;
+            CounterBtn.BackgroundColor = color;
+            TabbedBtn.BackgroundColor = color;
+            FlyoutBtn.BackgroundColor = color;
+            lblHex.Text = color.ToHex();
         }
     }
 
