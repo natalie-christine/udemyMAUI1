@@ -31,6 +31,7 @@ public partial class FlyoutPage1 : FlyoutPage
     private void txtBill_Completed(object sender, EventArgs e)
     {
 		bill = decimal.Parse(txtBill.Text);
+        CalculateTotal();
     }
 
     private void sldTip_ValueChanged(object sender, ValueChangedEventArgs e)
