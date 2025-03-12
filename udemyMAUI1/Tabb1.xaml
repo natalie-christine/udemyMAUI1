@@ -98,13 +98,79 @@
             <DatePicker />
             <Switch IsToggled="True" />
 
-            <Image>
+            <Image WidthRequest="30">
                 <Image.Source>
+                    <FontImageSource
                     FontFamily="Icons"
-                    Glyph="&#xf2b9;"
+                    Glyph="&#xe800;"
+                    Size="50"/>
                 </Image.Source>
-                
-                
+            </Image>
+            <Image WidthRequest="30">
+                <Image.Source>
+                    <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xe804;"
+                    Size="50"/>
+                </Image.Source>
+            </Image>
+            <Image WidthRequest="30">
+                <Image.Source>
+                    <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xe80a;"
+                    Size="50"/>
+                </Image.Source>
+            </Image>
+            <Image WidthRequest="30">
+                <Image.Source>
+                    <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xe812;"
+                    Size="50"/>
+                </Image.Source>
+            </Image>
+            <Image WidthRequest="30">
+                <Image.Source>
+                    <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xf113;"
+                    Size="50"/>
+                </Image.Source>
+            </Image>
+            <Image WidthRequest="30">
+                <Image.Source>
+                    <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xe842;"
+                    Size="50"/>
+                </Image.Source>
+            </Image>
+            <Image WidthRequest="30">
+                <Image.Source>
+                    <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xe843;"
+                    Size="50"/>
+                </Image.Source>
+            </Image>
+            <Image WidthRequest="30">
+                <Image.Source>
+                    <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xf12e;"
+                    Size="50"/>
+                </Image.Source>
+            </Image>
+
+            <Image WidthRequest="30" IsAnimationPlaying="True">
+                <Image.Source>
+                    <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xe839;"
+                    Size="50" />
+                    
+                </Image.Source>
             </Image>
 
         </StackLayout>
