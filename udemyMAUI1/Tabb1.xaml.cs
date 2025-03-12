@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 
 namespace udemyMAUI1;
 
+// TODO add images
 public partial class Tabb1 : TabbedPage
 {
 	public Tabb1()

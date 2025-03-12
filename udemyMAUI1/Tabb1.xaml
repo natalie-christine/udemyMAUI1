@@ -59,6 +59,20 @@
             <Frame HeightRequest="100">
                 <Image x:Name="candyImage" Source="candy_1.png."></Image>
             </Frame>
+            <ListView>
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>First</x:String>
+                        <x:String>Second</x:String>
+                        <x:String>Third</x:String>
+                    </x:Array>
+                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage>
 
@@ -88,21 +102,23 @@
     </ContentPage>
 
     <ContentPage Title="Stuff4">
-            <StackLayout Spacing="20">
-            <ListView>
-                <ListView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>First</x:String>
-                        <x:String>Second</x:String>
-                        <x:String>Third</x:String>
-                    </x:Array>
-                </ListView.ItemsSource>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-        </ContentPage>
+        <ScrollView>
+            <VerticalStackLayout Spacing="20" BackgroundColor="Black">
+                <Image Source="loader.gif" IsAnimationPlaying="True" WidthRequest="300" />
+                <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="Cakecafe" />
+                <Label TextColor="White" FontSize="50" Text="HALLO WELT" FontFamily="ComicsTricks" />
+                <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="CheekyRabbit" />
+                <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="DarkPoestry" />
+                <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="Mabook" />
+                <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="Wigglye" />
+                <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="BlackCastle" />
+                <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="Burn" />
+                <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="Deutsch" />
+                <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="GameOfSquids" />
+                <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="GoodTiming" />
+                <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="Plank" />
+                <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="SnowtopCaps" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage>
 </TabbedPage>
