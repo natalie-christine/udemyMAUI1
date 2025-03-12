@@ -98,6 +98,15 @@
             <DatePicker />
             <Switch IsToggled="True" />
 
+            <Image>
+                <Image.Source>
+                    FontFamily="Icons"
+                    Glyph="&#xf2b9;"
+                </Image.Source>
+                
+                
+            </Image>
+
         </StackLayout>
     </ContentPage>
 

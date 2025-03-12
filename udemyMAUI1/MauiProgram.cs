@@ -33,6 +33,7 @@ namespace udemyMAUI1
                     fonts.AddFont("good timing bd.otf", "GoodTiming");
                     fonts.AddFont("PLANK__.TTF", "Plank");
                     fonts.AddFont("SnowtopCaps.otf", "SnowtopCaps");
+                    fonts.AddFont("fontello.ttf", "Icons");
                 });
 
 #if DEBUG
