@@ -16,17 +16,26 @@
                 Clicked="Button_Clicked" VerticalOptions="Fill"
         />
 
-        <Grid Margin="20" ColumnDefinitions=".3*,.6*,*" RowDefinitions="*,*,*" RowSpacing="20" ColumnSpacing="10">
+        <Grid Margin="20" ColumnDefinitions=".3*,.6*,*" RowDefinitions="*" RowSpacing="20" ColumnSpacing="10">
             <Button Text="Button 1" Grid.Row="0" Grid.Column="0" BackgroundColor="#59AEF3" HeightRequest="80" />
             <Button Text="Button 2" Grid.Row="0" Grid.Column="1" BackgroundColor="#0088FF" />
-            <Button Text="Button 3" Grid.Row="0" Grid.Column="2" BackgroundColor="#265BCF" />
-            <Button Text="Button 4" Grid.Row="1" Grid.Column="0" HeightRequest="80" />
-            <Button Text="Button 5" Grid.Row="1" Grid.Column="1" />
-            <Button Text="Button 6" Grid.Row="1" Grid.Column="2" />
-            <Button Text="Button 7" Grid.Row="2" Grid.Column="0" HeightRequest="80" />
-            <Button Text="Button 8" Grid.Row="2" Grid.Column="1" />
-            <Button Text="Button 9" Grid.Row="2" Grid.Column="2" />
+            <Button Text="Get new quote" Grid.Row="0" Grid.Column="2" BackgroundColor="#265BCF" />
         </Grid>
+
+        <Frame Margin="20,0,20,0" HeightRequest="200" BackgroundColor="Blue" Opacity=".8">
+            <Frame.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStopCollection>
+                        <GradientStop Offset="0" Color="#265BCF" />
+                        <GradientStop Offset=".5" Color="Pink" />
+                        <GradientStop Offset="1" Color="#59AEF3" />
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </Frame.Background>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label VerticalOptions="CenterAndExpand" TextColor="Black" FontSize="20" Text="This is a font test" FontFamily="Wigglye" />
+            </HorizontalStackLayout>
+        </Frame>
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="20" Spacing="20">
             <Frame HorizontalOptions="CenterAndExpand">
