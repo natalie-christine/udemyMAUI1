@@ -18,11 +18,11 @@
 
         <Grid Margin="20" ColumnDefinitions=".3*,.6*,*" RowDefinitions="*" RowSpacing="20" ColumnSpacing="10">
             <Button Text="Button 1" Grid.Row="0" Grid.Column="0" BackgroundColor="#59AEF3" HeightRequest="80" />
-            <Button Text="Button 2" Grid.Row="0" Grid.Column="1" BackgroundColor="#0088FF" />
-            <Button Text="Get new quote" Grid.Row="0" Grid.Column="2" BackgroundColor="#265BCF" />
+            <Button Text="Get new quote" Grid.Row="0" Grid.Column="1" BackgroundColor="#0088FF" x:Name ="btnGenerateQuote" Clicked="btnGenerateQuotes_Clicked" />
+            <Button Text="Get new backround" Grid.Row="0" Grid.Column="2" BackgroundColor="#265BCF" x:Name ="btnGenerateColor" Clicked="btnGenerateColor_Clicked"/>
         </Grid>
 
-        <Frame Margin="20,0,20,0" HeightRequest="200" BackgroundColor="Blue" Opacity=".8">
+        <Frame x:Name="background" Margin="20,0,20,0" HeightRequest="200" Opacity=".8">
             <Frame.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStopCollection>
@@ -33,7 +33,7 @@
                 </LinearGradientBrush>
             </Frame.Background>
             <HorizontalStackLayout HorizontalOptions="Center">
-                <Label VerticalOptions="CenterAndExpand" TextColor="Black" FontSize="20" Text="This is a font test" FontFamily="Wigglye" />
+                <Label x:Name="quoteslabel" VerticalOptions="CenterAndExpand" TextColor="Black" FontSize="20" Text="This is a font test" FontFamily="Wigglye" />
             </HorizontalStackLayout>
         </Frame>
 

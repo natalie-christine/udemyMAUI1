@@ -59,6 +59,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\fontello.ttf" />
+	  <None Remove="Resources\Raw\quotes.txt" />
 	</ItemGroup>
 
 	<ItemGroup>
