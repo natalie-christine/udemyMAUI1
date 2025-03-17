@@ -8,6 +8,7 @@ public partial class Page1 : ContentPage
 	Random random = new Random();
 
 	List<string> quotes = new List<string>();
+	bool isBlack = true;
 
     async Task LoadMauiAsset()
     {
@@ -29,6 +30,7 @@ public partial class Page1 : ContentPage
 	{
         base.OnAppearing();
         await LoadMauiAsset();
+        changeQuote();
     }
 
 	private void Button_Clicked(object sender, EventArgs e)
@@ -36,9 +38,28 @@ public partial class Page1 : ContentPage
         Navigation.PopAsync();
     }
 
-	private void btnGenerateQuotes_Clicked(object sender, EventArgs e)
+    private void btnChangeTextColor_Clicked(object sender, EventArgs e)
 	{
-        // generate random quote
+		isBlack = !isBlack;
+
+        if (isBlack)
+		{
+			quoteslabel.TextColor = Color.FromArgb("#000000");
+        }
+		else
+		{
+            quoteslabel.TextColor = Color.FromArgb("#ffffff");
+        }
+	}
+
+    private void btnGenerateQuotes_Clicked(object sender, EventArgs e)
+	{
+		// generate random quote
+		changeQuote();
+    }
+
+	private void changeQuote()
+	{
         int index = random.Next(quotes.Count);
         quoteslabel.Text = quotes[index];
     }
