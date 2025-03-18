@@ -6,19 +6,19 @@
              Title="Page2">
 
     <ContentPage.Resources>
-        <Models:Person x:Key="person2" x:Name="person2" Name="Peter" Address="Some address" Phone="9876" />
+        <Models:Person x:Key="person2" Name="Peter" Address="Some address" Phone="9876" />
     </ContentPage.Resources>
     
     <VerticalStackLayout>
-        <Label 
+        <Entry 
             Text="{Binding Name}"
             HorizontalOptions="Center"
             FontSize="50"/>
-        <Label 
+        <Entry 
             Text="{Binding Phone}"
             HorizontalOptions="Center"
             FontSize="50"/>
-        <Label 
+        <Entry 
             Text="{Binding Address}"
             HorizontalOptions="Center"
             FontSize="50"/>
@@ -26,6 +26,29 @@
             Text="Hello World"
             Clicked="OnClicked"
              />
+
+        <Image Source="potion_green.png" Rotation="{Binding Source= {x:Reference slider}, Path=Value}" HeightRequest="50" Margin="50">
+           
+        </Image>
+
+        <Slider WidthRequest="200"
+            Minimum="0"
+            Maximum="360"
+            x:Name="slider"/>
+
+        <Entry Placeholder="Source"
+               x:Name="source"
+               FontSize="24"
+               Text="Initial"
+               WidthRequest="300"/>
+
+        <Entry Placeholder="Target"
+                x:Name="target"
+                FontSize="24"
+                Text="{Binding Source= {x:Reference source}, Path= Text, Mode=TwoWay}"
+               WidthRequest="300"  />
+
+
     </VerticalStackLayout>
 
 </ContentPage>
