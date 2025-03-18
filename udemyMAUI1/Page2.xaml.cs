@@ -1,3 +1,7 @@
+using udemyMAUI1.Models;
+
+
+
 namespace udemyMAUI1
 {
 
@@ -8,11 +12,31 @@ namespace udemyMAUI1
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void OnClicked(object sender, EventArgs e)
         {
-            Navigation.PopAsync();
-            //Navigation.PushAsync(new MainPage());
+            var person = new Person
+            {
+                Name = "John",
+                Phone = "1234",
+                Address = "Straﬂe 1"
+            };
+
+            // Variante 3
+            BindingContext = person;
+
+            // Variante 2
+            //txtName.BindingContext = person;
+            //txtName.SetBinding(Label.TextProperty, "Name");
+
+
+            // Variante 1
+            //Binding personBinding = new Binding();
+            //personBinding.Source = person;
+            //personBinding.Path = "Name";
+
+            //txtName.SetBinding(Label.TextProperty, personBinding);
         }
+
     }
 
 }

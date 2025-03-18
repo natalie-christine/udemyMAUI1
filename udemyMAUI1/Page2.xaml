@@ -2,23 +2,30 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="udemyMAUI1.Page2"
+             xmlns:Models="clr-namespace:udemyMAUI1.Models"
              Title="Page2">
+
+    <ContentPage.Resources>
+        <Models:Person x:Key="person2" x:Name="person2" Name="Peter" Address="Some address" Phone="9876" />
+    </ContentPage.Resources>
+    
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label
-            Text="MAUI rockt :D"
-            TextColor="Blue"
-            FontSize="Large"
-            HorizontalOptions="Center" />
+            Text="{Binding Name}"
+            HorizontalOptions="Center"
+            FontSize="50"/>
+        <Label 
+            Text="{Binding Phone}"
+            HorizontalOptions="Center"
+            FontSize="50"/>
+        <Label 
+            Text="{Binding Address}"
+            HorizontalOptions="Center"
+            FontSize="50"/>
         <Button
             Text="Hello World"
-            Clicked="Button_Clicked"
-            Background="#3CFF00"
-            TextColor="#5D5D5D"
-            BorderColor="#FF0000" BorderWidth="10" />
+            Clicked="OnClicked"
+             />
     </VerticalStackLayout>
 
 </ContentPage>
