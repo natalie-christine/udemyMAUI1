@@ -13,22 +13,24 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <ImageButton
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Clicked="ImageButton_Clicked"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                <ImageButton
+                    VerticalOptions="Center"
+                    Source="dotnet_bot.png"
+                    HeightRequest="185"
+                    Clicked="ImageButton_Clicked"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="dot net bot in a race car number eight" />
 
-            <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+                <Label
+                    VerticalOptions="Center"
+                    Text="Welcome to &#10;.NET Multi-platform App UI"
+                    Style="{StaticResource SubHeadline}"
+                    SemanticProperties.HeadingLevel="Level2"
+                    SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+            </HorizontalStackLayout>
 
-            <BoxView VerticalOptions="FillAndExpand"></BoxView>
-
-            <Grid Margin="20,0,20,0" ColumnDefinitions=".5*,.5*" RowDefinitions="*,*,*" RowSpacing="20" ColumnSpacing="10">
+            <Grid Margin="20,0,20,0" ColumnDefinitions=".5*,.5*" RowDefinitions="*,*,*,*" RowSpacing="20" ColumnSpacing="10">
                 <Button
                         x:Name="CounterBtn"
                         Grid.Row="0" Grid.Column="0"
@@ -38,8 +40,16 @@
                         Clicked="OnCounterClicked" />
 
                 <Button
-                        x:Name="TabbedBtn"
+                        x:Name="Page2Button"
                         Grid.Row="1" Grid.Column="0"
+                        Text="Page 2"
+                        BackgroundColor="{ StaticResource Primary }"
+                        TextColor="{ StaticResource Tertiary }"
+                        Clicked="OnPage2Clicked" />
+
+                <Button
+                        x:Name="TabbedBtn"
+                        Grid.Row="2" Grid.Column="0"
                         Text="Tabbed" 
                         BackgroundColor="{ StaticResource Primary }"
                         TextColor="{ StaticResource Tertiary }"
@@ -47,13 +57,13 @@
 
                 <Button
                         x:Name="FlyoutBtn"
-                        Grid.Row="2" Grid.Column="0"
+                        Grid.Row="3" Grid.Column="0"
                         Text="Flyout"
                         BackgroundColor="{ StaticResource Primary }"
                         TextColor="{ StaticResource Tertiary }"
                         Clicked="OnFlyoutClicked" />
 
-                <Frame x:Name="SliderContainer" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
+                <Frame x:Name="SliderContainer" Grid.Row="0" Grid.Column="1" Grid.RowSpan="4">
                     <VerticalStackLayout Spacing="15" VerticalOptions="Center">
                         <Label FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Text="Color Maker" />
                         <Label Text="Red Value:" />

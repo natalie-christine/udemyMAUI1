@@ -21,6 +21,11 @@ namespace udemyMAUI1
             Navigation.PushAsync(new Page1());
         }
 
+        private void OnPage2Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Page2());
+        }
+
         private void OnTabbedClicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new Tabb1());
@@ -70,6 +75,7 @@ namespace udemyMAUI1
         private void SetColor(Color color)
         {
             CounterBtn.BackgroundColor = color;
+            Page2Button.BackgroundColor = color;
             TabbedBtn.BackgroundColor = color;
             FlyoutBtn.BackgroundColor = color;
 
