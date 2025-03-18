@@ -13,12 +13,13 @@ public partial class Page1 : ContentPage
     async Task LoadMauiAsset()
     {
         using var stream = await FileSystem.OpenAppPackageFileAsync("quotes.txt");
+		stream.Position = 0;
         using var reader = new StreamReader(stream);
 
-        while (reader.Peek() !=-1)
+		while (!reader.EndOfStream)
 		{
-            quotes.Add(reader.ReadLine() ?? "nöööööööö! Jetzt nicht!");
-        }
+			quotes.Add(reader.ReadLine() ?? "nöööööööö! Jetzt nicht!");
+		}
     }
 
     public Page1()
@@ -70,29 +71,46 @@ public partial class Page1 : ContentPage
 			System.Drawing.Color.FromArgb(
 				random.Next(0, 256),
 				random.Next(0, 256),
-				random.Next(0, 256));
+				random.Next(0, 256)
+				);
+
+        var middleColor =
+            System.Drawing.Color.FromArgb(
+                random.Next(0, 256),
+                random.Next(0, 256),
+                random.Next(0, 256)
+                );
+
+        var middleColor1 =
+            System.Drawing.Color.FromArgb(
+                random.Next(0, 256),
+                random.Next(0, 256),
+                random.Next(0, 256)
+                );
+
+         var middleColor2 =
+            System.Drawing.Color.FromArgb(
+            random.Next(0, 256),
+            random.Next(0, 256),
+            random.Next(0, 256)
+            );
 
 
         var endColor =
             System.Drawing.Color.FromArgb(
-                random.Next(0, 256),
-                random.Next(0, 256),
-                random.Next(0, 256));
+            random.Next(0, 256),
+            random.Next(0, 256),
+            random.Next(0, 256));
 
-
-		var colors = ColorControls.GetColorGradient(startColor, endColor, 6);
-
-		float stopOffset = .0f;
 
 		var stops = new GradientStopCollection();
 
-		foreach (var color in colors)
-		{
-			stops.Add(new GradientStop(Color.FromArgb(color.Name), stopOffset));
-			stopOffset += .2f;
-
-		}
-
+		stops.Add(new GradientStop(Color.FromArgb(startColor.Name), 0));
+        stops.Add(new GradientStop(Color.FromArgb(middleColor.Name), .25f ));
+        stops.Add(new GradientStop(Color.FromArgb(middleColor1.Name), .5f));
+        stops.Add(new GradientStop(Color.FromArgb(middleColor2.Name), .75f));
+        stops.Add(new GradientStop(Color.FromArgb(endColor.Name), 1));
+  
 		var gradient = new LinearGradientBrush(stops, new Point(0,0), new Point (1,1));
 
 		background.Background = gradient;

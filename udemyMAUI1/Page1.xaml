@@ -27,7 +27,9 @@
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStopCollection>
                         <GradientStop Offset="0" Color="#265BCF" />
+                        <GradientStop Offset=".25" Color="Pink" />
                         <GradientStop Offset=".5" Color="Pink" />
+                        <GradientStop Offset=".75" Color="Pink" />
                         <GradientStop Offset="1" Color="#59AEF3" />
                     </GradientStopCollection>
                 </LinearGradientBrush>
