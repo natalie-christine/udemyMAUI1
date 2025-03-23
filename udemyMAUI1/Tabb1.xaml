@@ -8,20 +8,87 @@
             UnselectedTabColor="DarkOrchid"
             >
     <ContentPage Title="Stuff1">
-        <StackLayout
-            Spacing="20">
-            <Label Text="Tab1" />
-            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 1"/> 
-            <Label Text="Tab2" />
-            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 2"/>
-            <Label Text="Tab3" />
-            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 3"/>
-        </StackLayout>
+        <Grid RowDefinitions=".6*,.4*">
+            <VerticalStackLayout>
+                <Label
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="Erros: 0 of 6" />
+                <Image HeightRequest="200" Source="img0.jpg" />
+                <Label FontSize="40" HorizontalOptions="Center" Text="{ Binding Spotlight }" VerticalOptions="Center" />
+                <Label FontSize="Large" HorizontalTextAlignment="Center" Text="You Lost!" />
+                <Button HorizontalOptions="Center" Text="Reset" WidthRequest="100" />
+            </VerticalStackLayout>
+            <FlexLayout Grid.Row="1" JustifyContent="SpaceEvenly" Wrap="Wrap">
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+            </FlexLayout>
+        </Grid>
     </ContentPage>
 
     <ContentPage Title="Stuff2">
         <StackLayout
             Spacing="20">
+
+            <Label Text="Tab1" />
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 1"/>
+            <Label Text="Tab2" />
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 2"/>
+            <Label Text="Tab3" />
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 3"/>
+
             <SearchBar x:Name="searchControl" Placeholder="Search for stuff" 
                        SearchButtonPressed="searchControl_SearchButtonPressed"/>
             <SwipeView HeightRequest="40">

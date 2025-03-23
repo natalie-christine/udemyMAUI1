@@ -1,13 +1,65 @@
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace udemyMAUI1;
 
-// TODO add images
-public partial class Tabb1 : TabbedPage
+public partial class Tabb1 : TabbedPage, INotifyPropertyChanged
 {
-	public Tabb1()
+    #region UI Properties
+    public string Spotlight
+    {
+        get => spotlight;
+        set
+        {
+            spotlight = value;
+            OnPropertyChanged();
+        }
+    }
+    #endregion
+
+    #region Fields
+    List<string> words = new List<string>()
+    {
+        "python",
+        "javascript",
+        "maui",
+        "csharp",
+        "mongodb",
+        "sql",
+        "xaml",
+        "word",
+        "excel",
+        "powerpoint",
+        "code",
+        "hotreload",
+        "snippets"
+    };
+    string answer = "";
+    private string spotlight;
+    List<char> guessed = new List<char>();
+    #endregion
+
+    #region Game Engine
+    private void PickWord()
+    {
+        answer = words[new Random().Next(0, words.Count)];
+        Debug.WriteLine(answer);
+    }
+
+    private void CalculateWord(string answer, List<char> guessed)
+    {
+        var temp = answer.Select(x => (guessed.IndexOf(x) >= 0 ? x : '_')).ToArray();
+        Spotlight = string.Join(' ', temp);
+    }
+    #endregion
+
+    public Tabb1()
 	{
 		InitializeComponent();
+        BindingContext = this;
+        PickWord();
+        CalculateWord(answer, guessed);
 	}
 
     private void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
