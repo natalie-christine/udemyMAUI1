@@ -19,10 +19,10 @@
                 <Label FontSize="Large" HorizontalTextAlignment="Center" Text="{Binding Message}" />
                 <Button HorizontalOptions="Center" Text="Reset" WidthRequest="100" Clicked="ResetGame" />
             </VerticalStackLayout>
-            <FlexLayout x:Name="LettersContainer" Grid.Row="1" JustifyContent="SpaceEvenly" BindableLayout.ItemsSource="{Binding Letters}" Wrap="Wrap" MaximumWidthRequest="650">
+            <FlexLayout x:Name="LettersContainer" Grid.Row="1" JustifyContent="SpaceEvenly" BindableLayout.ItemsSource="{Binding Letters}" Wrap="Wrap" MaximumWidthRequest="650" MaximumHeightRequest="160">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <Button Margin="5" HeightRequest="50" WidthRequest="50"  Text="{Binding .}"  Clicked="Button_Clicked"/>
+                        <Button Margin="2" HeightRequest="40" WidthRequest="50"  Text="{Binding .}"  Clicked="Button_Clicked"/>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </FlexLayout>
