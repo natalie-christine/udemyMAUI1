@@ -1,6 +1,10 @@
 ﻿using System.Runtime.InteropServices;
 using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Alerts;
+using Microsoft.Maui.ApplicationModel.Communication;
+using Supabase;
+using Supabase.Interfaces;
+using udemyMAUI1.Models.DB;
 
 namespace udemyMAUI1
 {
@@ -8,12 +12,18 @@ namespace udemyMAUI1
     {
         int count = 0;
         bool isRandom = false;
-        string hexValue; 
-
+        string hexValue;
+        Client supabaseClient;
 
         public MainPage()
         {
             InitializeComponent();
+            HandlerChanged += OnHandlerChanged;
+        }
+
+        void OnHandlerChanged(object sender, EventArgs e)
+        {
+            this.supabaseClient = Handler.MauiContext.Services.GetService<Client>();
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
@@ -36,9 +46,14 @@ namespace udemyMAUI1
             Navigation.PushAsync(new FlyoutPage1());
         }
 
-        private void ImageButton_Clicked(object sender, EventArgs e)
+        private async void ImageButton_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Hallo", "Welt :)", "Schließen");
+            var session = await supabaseClient.Auth.SignIn("mahe@terraex.de", "mahe");
+            var results = await supabaseClient.From<Todo>().Get();
+            foreach (var r in results.Models)
+            {
+                DisplayAlert("TODO", r.Name, "Close");
+            }
         }
 
         private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
