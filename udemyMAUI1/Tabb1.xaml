@@ -9,71 +9,22 @@
             >
     <ContentPage Title="Stuff1">
         <Grid RowDefinitions=".6*,.4*">
-            <VerticalStackLayout>
+            <VerticalStackLayout Spacing="10">
                 <Label
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
-                    Text="Erros: 0 of 6" />
+                    Text="{ Binding GameStatus}" />
                 <Image HeightRequest="200" Source="img0.jpg" />
                 <Label FontSize="40" HorizontalOptions="Center" Text="{ Binding Spotlight }" VerticalOptions="Center" />
-                <Label FontSize="Large" HorizontalTextAlignment="Center" Text="You Lost!" />
-                <Button HorizontalOptions="Center" Text="Reset" WidthRequest="100" />
+                <Label FontSize="Large" HorizontalTextAlignment="Center" Text="{Binding Message}" />
+                <Button HorizontalOptions="Center" Text="Reset" WidthRequest="100" Clicked="ResetGame" />
             </VerticalStackLayout>
-            <FlexLayout Grid.Row="1" JustifyContent="SpaceEvenly" Wrap="Wrap">
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
-                <Button HeightRequest="50" WidthRequest="50" BackgroundColor="Navy" Text="A" />
+            <FlexLayout Grid.Row="1" JustifyContent="SpaceEvenly" BindableLayout.ItemsSource="{Binding Letters}" Wrap="Wrap">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Button HeightRequest="50" WidthRequest="50"  Text="{Binding .}"  Clicked="Button_Clicked"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
             </FlexLayout>
         </Grid>
     </ContentPage>
