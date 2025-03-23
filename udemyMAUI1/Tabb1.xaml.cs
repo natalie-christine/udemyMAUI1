@@ -46,6 +46,15 @@ public partial class Tabb1 : TabbedPage, INotifyPropertyChanged
             OnPropertyChanged();
         }
     }
+    public string CurrentImage
+    {
+        get => currentImage;
+        set
+        {
+            currentImage = value;
+            OnPropertyChanged();
+        }
+    }
 
     #endregion
 
@@ -73,6 +82,7 @@ public partial class Tabb1 : TabbedPage, INotifyPropertyChanged
     List<char> guessed = new List<char>();
     private string gameStatus;
     int mistakes = 0;
+    private string currentImage = "img0.jpg";
     #endregion
 
     #region Game Engine
@@ -92,8 +102,12 @@ public partial class Tabb1 : TabbedPage, INotifyPropertyChanged
     {
         mistakes = 0;
         guessed.Clear();
+        CurrentImage = "img0.jpg";
         PickWord();
         CalculateWord(answer, guessed);
+        Message = "";
+        UpdateStatus();
+        EnableLetters();
     }
     
     private void UpdateStatus()
@@ -194,7 +208,7 @@ public partial class Tabb1 : TabbedPage, INotifyPropertyChanged
             mistakes++;
             UpdateStatus();
             CheckIfGameLost();
-
+            CurrentImage = $"img{mistakes}.jpg";
         }
     }
     private void CheckIfGameWon()
@@ -202,6 +216,7 @@ public partial class Tabb1 : TabbedPage, INotifyPropertyChanged
         if (Spotlight.Replace(" " , "" ) == answer)
         {
             Message = "Gewonnen!";
+            DisableLetters();
         }
     }
 
@@ -210,7 +225,30 @@ public partial class Tabb1 : TabbedPage, INotifyPropertyChanged
         if (mistakes >= 6)
         {
             Message = "Verloren!";
+            DisableLetters();
         }
     }
 
+    private void DisableLetters()
+    {
+        foreach(var child in LettersContainer.Children)
+        {
+            var btn = child as Button;
+            if (btn != null)
+            {
+                btn.IsEnabled = false;
+            }
+        }
+    }
+    private void EnableLetters()
+    {
+        foreach (var child in LettersContainer.Children)
+        {
+            var btn = child as Button;
+            if (btn != null)
+            {
+                btn.IsEnabled = true;
+            }
+        }
+    }
 }

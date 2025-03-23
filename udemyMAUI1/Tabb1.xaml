@@ -8,21 +8,21 @@
             UnselectedTabColor="DarkOrchid"
             >
     <ContentPage Title="Stuff1">
-        <Grid RowDefinitions=".6*,.4*">
+        <Grid RowDefinitions=".7*,.3*">
             <VerticalStackLayout Spacing="10">
                 <Label
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
                     Text="{ Binding GameStatus}" />
-                <Image HeightRequest="200" Source="img0.jpg" />
+                <Image HeightRequest="200" Source="{Binding CurrentImage }" />
                 <Label FontSize="40" HorizontalOptions="Center" Text="{ Binding Spotlight }" VerticalOptions="Center" />
                 <Label FontSize="Large" HorizontalTextAlignment="Center" Text="{Binding Message}" />
                 <Button HorizontalOptions="Center" Text="Reset" WidthRequest="100" Clicked="ResetGame" />
             </VerticalStackLayout>
-            <FlexLayout Grid.Row="1" JustifyContent="SpaceEvenly" BindableLayout.ItemsSource="{Binding Letters}" Wrap="Wrap">
+            <FlexLayout x:Name="LettersContainer" Grid.Row="1" JustifyContent="SpaceEvenly" BindableLayout.ItemsSource="{Binding Letters}" Wrap="Wrap" MaximumWidthRequest="650">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <Button HeightRequest="50" WidthRequest="50"  Text="{Binding .}"  Clicked="Button_Clicked"/>
+                        <Button Margin="5" HeightRequest="50" WidthRequest="50"  Text="{Binding .}"  Clicked="Button_Clicked"/>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </FlexLayout>
