@@ -1,5 +1,4 @@
 namespace udemyMAUI1;
-using ColorUtility;
 using System;
 
 public partial class Page1 : ContentPage

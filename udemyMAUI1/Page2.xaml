@@ -57,9 +57,17 @@
                 </VerticalStackLayout>
             </Frame>
             <Frame Grid.Column="0" Grid.Row="1">
-                <HorizontalStackLayout>
+                <HorizontalStackLayout BackgroundColor="#456C45">
+                    
+                    
                 </HorizontalStackLayout>
             </Frame>
-        </Grid>
+        <Frame Grid.Column="1" Grid.Row="1">
+            <HorizontalStackLayout BackgroundColor="#264D26">
+
+
+            </HorizontalStackLayout>
+        </Frame>
+    </Grid>
 
 </ContentPage>
