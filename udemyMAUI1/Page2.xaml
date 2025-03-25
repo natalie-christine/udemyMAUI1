@@ -104,7 +104,22 @@
                         </VerticalStackLayout>
                     </Frame>
                     <!--#endregion-->
-
+                    <!--#region Result -->
+                    <Frame>
+                        <VerticalStackLayout>
+                            <Label FontSize="Title"
+                                   HorizontalOptions="Center" Text="Result: Normal" TextColor="Gray" />
+                            <gauge:SfRadialGauge>
+                                <gauge:SfRadialGauge.Axes>
+                                    <gauge:RadialAxis
+                                        Maximum="50" Minimum="0"
+                                        ShowAxisLine="False" ShowLabels="False" ShowTicks="False"/>
+                                </gauge:SfRadialGauge.Axes>
+                            </gauge:SfRadialGauge>
+                        </VerticalStackLayout>
+                        
+                    </Frame>
+                    <!--#endregion-->
                 </VerticalStackLayout>
             </ScrollView>
         </Frame>
