@@ -8,7 +8,7 @@
             UnselectedTabColor="DarkOrchid"
             >
     <ContentPage Title="Stuff1">
-        <Grid RowDefinitions=".7*,.3*">
+        <Grid RowDefinitions=".65*,.35*">
             <VerticalStackLayout Spacing="10">
                 <Label
                     FontAttributes="Bold"
@@ -19,7 +19,7 @@
                 <Label FontSize="Large" HorizontalTextAlignment="Center" Text="{Binding Message}" />
                 <Button HorizontalOptions="Center" Text="Reset" WidthRequest="100" Clicked="ResetGame" />
             </VerticalStackLayout>
-            <FlexLayout x:Name="LettersContainer" Grid.Row="1" JustifyContent="SpaceEvenly" BindableLayout.ItemsSource="{Binding Letters}" Wrap="Wrap" MaximumWidthRequest="650" MaximumHeightRequest="160">
+            <FlexLayout Margin="0,-50,0,0" x:Name="LettersContainer" Grid.Row="1" JustifyContent="SpaceEvenly" BindableLayout.ItemsSource="{Binding Letters}" Wrap="Wrap" MaximumWidthRequest="650" MaximumHeightRequest="160">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <Button Margin="2" HeightRequest="40" WidthRequest="50"  Text="{Binding .}"  Clicked="Button_Clicked"/>

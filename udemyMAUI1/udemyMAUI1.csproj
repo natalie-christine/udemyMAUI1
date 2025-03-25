@@ -58,6 +58,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="MVVM\Views\**" />
+	  <Compile Remove="MVVM\Views\**" />
+	  <EmbeddedResource Remove="MVVM\Views\**" />
+	  <MauiCss Remove="MVVM\Views\**" />
+	  <MauiXaml Remove="MVVM\Views\**" />
+	  <None Remove="MVVM\Views\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Fonts\fontello.ttf" />
 	  <None Remove="Resources\Raw\quotes.txt" />
 	</ItemGroup>
@@ -67,6 +76,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
 		<PackageReference Include="Syncfusion.Maui.Gauges" Version="29.1.33" />
 	</ItemGroup>
 
@@ -80,12 +90,6 @@
 	  <MauiXaml Update="Tabb1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="MVVM\Models\" />
-	  <Folder Include="MVVM\ViewModels\" />
-	  <Folder Include="MVVM\Views\" />
 	</ItemGroup>
 
 </Project>
