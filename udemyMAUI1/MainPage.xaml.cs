@@ -18,6 +18,7 @@ namespace udemyMAUI1
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
+            // Navigation.PushModalAsync(new Page1()); // special stack for modal pages, page will be on top of the stack cannot go back
             Navigation.PushAsync(new Page1());
         }
 
