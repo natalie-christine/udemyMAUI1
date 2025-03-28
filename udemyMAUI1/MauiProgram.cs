@@ -37,6 +37,7 @@ namespace udemyMAUI1
                     fonts.AddFont("Plank.ttf", "Plank");
                     fonts.AddFont("SnowtopCaps.otf", "SnowtopCaps");
                     fonts.AddFont("fontello.ttf", "Icons");
+                    fonts.AddFont("m_icons.ttf", "MIcons");
                 });
 
 #if DEBUG

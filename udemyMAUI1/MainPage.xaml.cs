@@ -1,6 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Alerts;
+using udemyMAUI1.MVVM.Views;
 
 namespace udemyMAUI1
 {
@@ -37,6 +38,14 @@ namespace udemyMAUI1
             Navigation.PushAsync(new FlyoutPage1());
         }
 
+        private void OnMauiverterClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MenuView());
+        }
+        private void OnTest(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ConverterView());
+        }
         private void ImageButton_Clicked(object sender, EventArgs e)
         {
             DisplayAlert("Hallo", "Welt :)", "Schließen");
@@ -92,6 +101,11 @@ namespace udemyMAUI1
             var toast = Toast.Make("Color copied", CommunityToolkit.Maui.Core.ToastDuration.Short, 12);
             await toast.Show();
             
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 
