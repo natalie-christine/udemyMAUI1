@@ -9,7 +9,7 @@ namespace udemyMAUI1.Models
 {
     public class Person : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private String? name;
         public String Name
