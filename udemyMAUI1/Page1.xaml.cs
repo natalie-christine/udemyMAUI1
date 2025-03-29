@@ -1,5 +1,4 @@
 namespace udemyMAUI1;
-using ColorUtility;
 using System;
 
 public partial class Page1 : ContentPage
@@ -18,7 +17,7 @@ public partial class Page1 : ContentPage
 
 		while (!reader.EndOfStream)
 		{
-			quotes.Add(reader.ReadLine() ?? "nöööööööö! Jetzt nicht!");
+			quotes.Add(await reader.ReadLineAsync() ?? "nöööööööö! Jetzt nicht!");
 		}
     }
 

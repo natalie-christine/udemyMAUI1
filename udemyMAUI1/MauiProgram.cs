@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
+using Syncfusion.Maui.Core.Hosting;
 using Supabase;
 using System;
 
@@ -26,6 +27,7 @@ namespace udemyMAUI1
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .ConfigureSyncfusionCore()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -46,6 +48,7 @@ namespace udemyMAUI1
                     fonts.AddFont("Plank.ttf", "Plank");
                     fonts.AddFont("SnowtopCaps.otf", "SnowtopCaps");
                     fonts.AddFont("fontello.ttf", "Icons");
+                    fonts.AddFont("m_icons.ttf", "MIcons");
                 })
                 .Services.AddSingleton(provider => new Supabase.Client(supabaseUrl, supabaseKey, supabaseOptions));
 

@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using udemyMAUI1.Models;
+using udemyMAUI1.MVVM.ViewModels;
 
 
 
@@ -19,6 +20,7 @@ namespace udemyMAUI1
         public Page2()
         {
             InitializeComponent();
+            BMIPart.BindingContext = new BMIViewModel();
         }
 
         override protected void OnAppearing()
@@ -26,8 +28,7 @@ namespace udemyMAUI1
 
             base.OnAppearing();
 
-            BindingContext = person;
-
+            JohnPart.BindingContext = person;
         }
 
         private void OnClicked(object sender, EventArgs e)

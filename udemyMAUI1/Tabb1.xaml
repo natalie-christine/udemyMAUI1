@@ -8,20 +8,38 @@
             UnselectedTabColor="DarkOrchid"
             >
     <ContentPage Title="Stuff1">
-        <StackLayout
-            Spacing="20">
-            <Label Text="Tab1" />
-            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 1"/> 
-            <Label Text="Tab2" />
-            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 2"/>
-            <Label Text="Tab3" />
-            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 3"/>
-        </StackLayout>
+        <Grid RowDefinitions=".65*,.35*">
+            <VerticalStackLayout Spacing="10">
+                <Label
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="{ Binding GameStatus}" />
+                <Image HeightRequest="200" Source="{Binding CurrentImage }" />
+                <Label FontSize="40" HorizontalOptions="Center" Text="{ Binding Spotlight }" VerticalOptions="Center" />
+                <Label FontSize="Large" HorizontalTextAlignment="Center" Text="{Binding Message}" />
+                <Button HorizontalOptions="Center" Text="Reset" WidthRequest="100" Clicked="ResetGame" />
+            </VerticalStackLayout>
+            <FlexLayout Margin="0,-50,0,0" x:Name="LettersContainer" Grid.Row="1" JustifyContent="SpaceEvenly" BindableLayout.ItemsSource="{Binding Letters}" Wrap="Wrap" MaximumWidthRequest="650" MaximumHeightRequest="160">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Button Margin="2" HeightRequest="40" WidthRequest="50"  Text="{Binding .}"  Clicked="Button_Clicked"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+        </Grid>
     </ContentPage>
 
     <ContentPage Title="Stuff2">
         <StackLayout
             Spacing="20">
+
+            <Label Text="Tab1" />
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 1"/>
+            <Label Text="Tab2" />
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 2"/>
+            <Label Text="Tab3" />
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" Content="Option 3"/>
+
             <SearchBar x:Name="searchControl" Placeholder="Search for stuff" 
                        SearchButtonPressed="searchControl_SearchButtonPressed"/>
             <SwipeView HeightRequest="40">
