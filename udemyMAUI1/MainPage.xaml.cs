@@ -42,9 +42,9 @@ namespace udemyMAUI1
         {
             Navigation.PushAsync(new MenuView());
         }
-        private void OnTest(object sender, EventArgs e)
+        private void OnSupabaseClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ConverterView());
+            Navigation.PushAsync(new SupabaseView());
         }
         private void ImageButton_Clicked(object sender, EventArgs e)
         {

@@ -1,7 +1,7 @@
 ﻿using Supabase.Gotrue;
 using Supabase.Gotrue.Interfaces;
 
-namespace udemyMAUI1
+namespace udemyMAUI1.Helper
 {
     internal class SupabaseSessionHandler : IGotrueSessionPersistence<Session>
     {

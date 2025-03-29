@@ -3,6 +3,8 @@ using CommunityToolkit.Maui;
 using Syncfusion.Maui.Core.Hosting;
 using Supabase;
 using System;
+using udemyMAUI1.MVVM.ViewModels;
+using udemyMAUI1.Helper;
 
 namespace udemyMAUI1
 {
@@ -50,7 +52,9 @@ namespace udemyMAUI1
                     fonts.AddFont("fontello.ttf", "Icons");
                     fonts.AddFont("m_icons.ttf", "MIcons");
                 })
-                .Services.AddSingleton(provider => new Supabase.Client(supabaseUrl, supabaseKey, supabaseOptions));
+                .Services
+                    .AddSingleton(provider => new Supabase.Client(supabaseUrl, supabaseKey, supabaseOptions))
+                    .AddSingleton<SupabaseViewModel>();
 
 #if DEBUG
             builder.Logging.AddDebug();
@@ -58,7 +62,9 @@ namespace udemyMAUI1
 
 
 
-            return builder.Build();
+            var app = builder.Build();
+            ServiceHelper.Initialize(app.Services);
+            return app;
         }
     }
 }

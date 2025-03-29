@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="udemyMAUI1.MainPage"
-             Title="MAUI Demo App">
+             Title="MAUI Demo App"
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
         <Color x:Key="Primary">#0061B6</Color>
@@ -74,10 +75,10 @@
                                 Clicked="OnMauiverterClicked" />
                         <Button
                                 Grid.Row="3" Grid.Column="0"
-                                Text="leer"
+                                Text="Supabase"
                                 BackgroundColor="{ StaticResource Primary }"
                                 TextColor="{ StaticResource Tertiary }"
-                                Clicked="OnTest" />
+                                Clicked="OnSupabaseClicked" />
                         <Button
                                 Grid.Row="3" Grid.Column="0"
                                 Text="leer"
