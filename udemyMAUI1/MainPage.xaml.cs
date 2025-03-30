@@ -84,15 +84,25 @@ namespace udemyMAUI1
 
         private void SetColor(Color color)
         {
-            CounterBtn.BackgroundColor = color;
-            Page2Button.BackgroundColor = color;
-            TabbedBtn.BackgroundColor = color;
-            FlyoutBtn.BackgroundColor = color;
+            foreach (var button in buttonContainer.Children)
+            {
+                var but = (button as Button);
+                if (but != null)
+                {
+                    but.BackgroundColor = color;
+                    if (color.GetLuminosity() > 0.5)
+                    {
+                        but.TextColor = Color.FromRgb(0, 0, 0);
+                    }
+                    else
+                    {
+                        but.TextColor = Color.FromRgb(255, 255, 255);
+                    }
+                }
+            }
 
             hexValue = color.ToHex();
             lblHex.Text = color.ToHex();
-
-            
         }
 
         private async void ImageButton_Clicked_1(object sender, EventArgs e)
