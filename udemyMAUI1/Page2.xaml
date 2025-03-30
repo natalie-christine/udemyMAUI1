@@ -61,7 +61,7 @@
             <ScrollView>
                 <ScrollView.Background>
                     <LinearGradientBrush EndPoint="0,1">
-                        <GradientStop Offset="0.0" Color="AliceBlue" />
+                        <GradientStop Offset="0.0" Color="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
                         <GradientStop Offset="1.0" Color="Aqua" />
                     </LinearGradientBrush>
                 </ScrollView.Background>
@@ -70,13 +70,16 @@
                     <Frame>
                         <VerticalStackLayout>
                             <Label FontSize="Large" HorizontalOptions="Center" Text="Height (cm)" TextColor="Gray" />
-                            <gauge:SfLinearGauge Margin="0,15,0,0" Interval="10" Maximum="210" Minimum="100">
+                            <gauge:SfLinearGauge Margin="0,15,0,0" Interval="10" Maximum="210" Minimum="100" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}">
+                                <gauge:SfLinearGauge.LabelStyle>
+                                    <gauge:GaugeLabelStyle TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                                </gauge:SfLinearGauge.LabelStyle>
                                 <gauge:SfLinearGauge.MarkerPointers>
                                     <gauge:LinearContentPointer x:Name="HeightPointer" IsInteractive="True" Position="Cross" Value="{Binding BMI.Height}">
                                         <gauge:LinearContentPointer.Content>
                                             <Grid HeightRequest="25" WidthRequest="50">
-                                                <RoundRectangle CornerRadius="5" Fill="Blue" />
-                                                <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference HeightPointer}, Path=Value, StringFormat='{0:0}'}" TextColor="White" VerticalOptions="Center" />
+                                                <RoundRectangle CornerRadius="5" Fill="Aqua" />
+                                                <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference HeightPointer}, Path=Value, StringFormat='{0:0}'}" TextColor="Black" VerticalOptions="Center" />
                                             </Grid>
                                         </gauge:LinearContentPointer.Content>
                                     </gauge:LinearContentPointer>
@@ -89,13 +92,16 @@
                     <Frame>
                         <VerticalStackLayout>
                             <Label FontSize="Large" HorizontalOptions="Center" Text="Weight (kg)" TextColor="Gray" />
-                            <gauge:SfLinearGauge Margin="0,15,0,0" Interval="10" Maximum="150" Minimum="50">
+                            <gauge:SfLinearGauge  BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" Margin="0,15,0,0" Interval="10" Maximum="150" Minimum="50">
+                                <gauge:SfLinearGauge.LabelStyle>
+                                    <gauge:GaugeLabelStyle TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                                </gauge:SfLinearGauge.LabelStyle>
                                 <gauge:SfLinearGauge.MarkerPointers>
-                                    <gauge:LinearContentPointer x:Name="WeightPointer" IsInteractive="True" Position="Cross" Value="{Binding BMI.Weight}">
+                                    <gauge:LinearContentPointer x:Name="WeightPointer" IsInteractive="True" Position="Cross" Value="{Binding BMI.Weight}" >
                                         <gauge:LinearContentPointer.Content>
                                             <Grid HeightRequest="25" WidthRequest="50">
-                                                <RoundRectangle CornerRadius="5" Fill="Blue" />
-                                                <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference WeightPointer}, Path=Value, StringFormat='{0:0}'}" TextColor="White" VerticalOptions="Center" />
+                                                <RoundRectangle CornerRadius="5" Fill="Aqua" />
+                                                <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference WeightPointer}, Path=Value, StringFormat='{0:0}'}" TextColor="Black" VerticalOptions="Center" />
                                             </Grid>
                                         </gauge:LinearContentPointer.Content>
                                     </gauge:LinearContentPointer>
@@ -111,11 +117,11 @@
                         FontSize="Title"
                         HorizontalOptions="Center"
                         Text="{Binding BMI.ResultText}" />
-                            <gauge:SfRadialGauge Margin="0,0,0,-55">
+                            <gauge:SfRadialGauge Margin="0,0,0,-55" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}">
                                 <gauge:SfRadialGauge.Axes>
                                     <gauge:RadialAxis
                                 Maximum="50"
-                                Minimum="0"
+                                Minimum="10"
                                 ShowAxisLine="False"
                                 ShowLabels="False"
                                 ShowTicks="False">
@@ -125,7 +131,7 @@
                                         EndWidth="0.65"
                                         Fill="#282E5A"
                                         StartValue="0"
-                                        StartWidth="0.65"
+                                        StartWidth="0.50"
                                         WidthUnit="Factor" />
                                             <gauge:RadialRange
                                         EndValue="17"
