@@ -34,7 +34,7 @@
 
             <Grid Margin="20,0,20,0" ColumnDefinitions=".5*,.5*" RowDefinitions="*" RowSpacing="20" ColumnSpacing="10">
                 <ScrollView Grid.Row="0" Grid.Column="0" MaximumHeightRequest="400">
-                    <VerticalStackLayout Spacing="20">
+                    <VerticalStackLayout Spacing="20" Padding="0,0,20,0" >
                         <Button
                                 x:Name="CounterBtn"
                                 Grid.Row="0" Grid.Column="0"
