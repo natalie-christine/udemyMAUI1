@@ -15,6 +15,7 @@ namespace udemyMAUI1
         public MainPage()
         {
             InitializeComponent();
+            btnRandom_Clicked(this, new EventArgs());
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
@@ -48,7 +49,15 @@ namespace udemyMAUI1
         }
         private void ImageButton_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Hallo", "Welt :)", "Schließen");
+            //DisplayAlert("Hallo", "Welt :)", "Schließen");
+            if (Application.Current.RequestedTheme == AppTheme.Light)
+            {
+                Application.Current.UserAppTheme = AppTheme.Dark;
+            }
+            else
+            {
+                Application.Current.UserAppTheme = AppTheme.Light;
+            }
         }
 
         private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
