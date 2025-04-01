@@ -98,7 +98,7 @@ namespace udemyMAUI1
                 var but = (button as Button);
                 if (but != null)
                 {
-                    but.BackgroundColor = color;
+                    //but.BackgroundColor = color;
                     if (color.GetLuminosity() > 0.5)
                     {
                         but.TextColor = Color.FromRgb(0, 0, 0);
@@ -112,6 +112,7 @@ namespace udemyMAUI1
 
             hexValue = color.ToHex();
             lblHex.Text = color.ToHex();
+            //Application.Current.Resources["Primary"] = hexValue;
         }
 
         private async void ImageButton_Clicked_1(object sender, EventArgs e)

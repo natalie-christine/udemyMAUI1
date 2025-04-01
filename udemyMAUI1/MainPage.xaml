@@ -11,7 +11,7 @@
         <Color x:Key="Tertiary">#000000</Color>-->
 
         <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="{ StaticResource PrimaryDark }" />
+            <!--<Setter Property="BackgroundColor" Value="{ StaticResource PrimaryDark }" />-->
             <Setter Property="TextColor" Value="{ StaticResource PrimaryDarkText }" />
             <Setter Property="FontSize" Value="20" />
         </Style>
