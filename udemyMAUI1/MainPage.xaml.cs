@@ -12,7 +12,7 @@ namespace udemyMAUI1
         string hexValue; 
 
 
-        public MainPage()
+        public MainPage() // Most beautifully page <3
         {
             InitializeComponent();
             btnRandom_Clicked(this, new EventArgs());

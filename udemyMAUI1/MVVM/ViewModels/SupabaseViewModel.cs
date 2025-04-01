@@ -66,6 +66,7 @@ namespace udemyMAUI1.MVVM.ViewModels
         {
             Todos = null;
             var results = await client.From<Todo>().Get();
+            await  client.From<Todo>().Where(x => x.UserId == session!.User!.Id).Get();
             Todos = results.Models;
         }
 
