@@ -93,26 +93,19 @@ namespace udemyMAUI1
 
         private void SetColor(Color color)
         {
-            foreach (var button in buttonContainer.Children)
+            Color textColor;
+            if (color.GetLuminosity() > 0.5)
             {
-                var but = (button as Button);
-                if (but != null)
-                {
-                    //but.BackgroundColor = color;
-                    if (color.GetLuminosity() > 0.5)
-                    {
-                        but.TextColor = Color.FromRgb(0, 0, 0);
-                    }
-                    else
-                    {
-                        but.TextColor = Color.FromRgb(255, 255, 255);
-                    }
-                }
+                textColor = Color.FromRgb(0, 0, 0);
+            }
+            else
+            {
+                textColor = Color.FromRgb(255, 255, 255);
             }
 
-            hexValue = color.ToHex();
-            lblHex.Text = color.ToHex();
-            //Application.Current.Resources["Primary"] = hexValue;
+            Application.Current.Resources["DynamicPrimary"] = color.ToHex();
+            Application.Current.Resources["DynamicPrimaryLight"] = color.WithLuminosity(color.GetLuminosity() + 0.2f).ToHex();
+            Application.Current.Resources["DynamicPrimaryText"] = textColor.ToHex();
         }
 
         private async void ImageButton_Clicked_1(object sender, EventArgs e)

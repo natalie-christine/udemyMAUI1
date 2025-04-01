@@ -10,9 +10,7 @@
         <Color x:Key="Secondary">#83A0CD</Color>
         <Color x:Key="Tertiary">#000000</Color>-->
 
-        <Style TargetType="Button">
-            <!--<Setter Property="BackgroundColor" Value="{ StaticResource PrimaryDark }" />-->
-            <Setter Property="TextColor" Value="{ StaticResource PrimaryDarkText }" />
+        <Style TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
             <Setter Property="FontSize" Value="20" />
         </Style>
     </ContentPage.Resources>
@@ -83,11 +81,11 @@
                     <VerticalStackLayout Spacing="15" VerticalOptions="Center">
                         <Label FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Text="Color Maker" />
                         <Label Text="Red Value:" />
-                        <Slider x:Name="sldRed" MaximumTrackColor="{ StaticResource Tertiary }" MinimumTrackColor="{ StaticResource Secondary }" ThumbColor="{ StaticResource Primary }" ValueChanged="Slider_ValueChanged" />
+                        <Slider x:Name="sldRed" ValueChanged="Slider_ValueChanged" />
                         <Label Text="Green Value:" />
-                        <Slider x:Name="sldGreen" MaximumTrackColor="{ StaticResource Tertiary }" MinimumTrackColor="{ StaticResource Secondary }" ThumbColor="{ StaticResource Primary }" ValueChanged="Slider_ValueChanged" />
+                        <Slider x:Name="sldGreen" ValueChanged="Slider_ValueChanged" />
                         <Label Text="Blue Value:" />
-                        <Slider x:Name="sldBlue" MaximumTrackColor="{ StaticResource Tertiary }" MinimumTrackColor="{ StaticResource Secondary }" ThumbColor="{ StaticResource Primary }" ValueChanged="Slider_ValueChanged" />
+                        <Slider x:Name="sldBlue" ValueChanged="Slider_ValueChanged" />
                     </VerticalStackLayout>
                 </Frame>
             </Grid>

@@ -4,7 +4,8 @@
              x:Class="udemyMAUI1.Page2"
              xmlns:Models="clr-namespace:udemyMAUI1.Models"
              xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
-             Title="Page2">
+             Title="Page2"
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
         <Models:Person x:Key="person2" Name="Peter" Address="Some address" Phone="9876" />
@@ -12,24 +13,7 @@
 
     <Grid x:Name="JohnPart" ColumnDefinitions=".5*,.5*" RowDefinitions=".5*,.5*" ColumnSpacing="20" RowSpacing="20" Margin="20">
         <Frame Grid.Column="0" Grid.Row="0">
-            <VerticalStackLayout>
-                <Entry 
-                    Text="{Binding Name}"
-                    HorizontalOptions="Center"
-                    />
-                <Entry 
-                    Text="{Binding Phone}"
-                    HorizontalOptions="Center"
-                    />
-                <Entry 
-                    Text="{Binding Address}"
-                    HorizontalOptions="Center"
-                    />
-                <Button
-                    Text="Hello World"
-                    Clicked="OnClicked"
-                     />
-            </VerticalStackLayout>
+
         </Frame>
         <Frame Grid.Column="0" Grid.Row="1">
             <VerticalStackLayout>
@@ -62,7 +46,7 @@
                 <ScrollView.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Offset="0.0" Color="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
-                        <GradientStop Offset="1.0" Color="Aqua" />
+                        <GradientStop Offset="1.0" Color="{DynamicResource DynamicPrimaryLight}" />
                     </LinearGradientBrush>
                 </ScrollView.Background>
                 <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
@@ -117,7 +101,7 @@
                         FontSize="Title"
                         HorizontalOptions="Center"
                         Text="{Binding BMI.ResultText}" />
-                            <gauge:SfRadialGauge Margin="0,0,0,-55" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}">
+                            <gauge:SfRadialGauge Margin="0,0,0,-35" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}">
                                 <gauge:SfRadialGauge.Axes>
                                     <gauge:RadialAxis
                                 Maximum="50"
