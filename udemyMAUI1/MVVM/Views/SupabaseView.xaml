@@ -3,29 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="udemyMAUI1.MVVM.Views.SupabaseView"
-             Title="SupabaseView">
+             Title="SupabaseView"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Resources>
         <ResourceDictionary>
             <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+            <toolkit:IsNotNullConverter x:Key="IsNotNullConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    
-    <VerticalStackLayout>
+
+    <VerticalStackLayout Padding="20" BackgroundColor="LightGray">
+        <Label Text="Supabase Tests" FontSize="Header" FontAttributes="Bold" Padding="0,0,0,20" />
         <Frame IsVisible="{Binding IsLoggedIn, Converter={StaticResource InvertedBoolConverter }}">
             <VerticalStackLayout>
-                <Entry x:Name="entryUsername" Placeholder="Username" />
-                <Entry x:Name="entryPassword" Placeholder="Password" IsPassword="True" />
-                <Button Text="Login" Clicked="OnLoginClicked" />
-                <Label Text="{Binding ErrorMessage}" />
+                <Label Text="Login" FontSize="Title" FontAttributes="Bold" Padding="0,0,0,10" />
+                <Entry x:Name="entryUsername" Placeholder="Username" Text="{Binding LoginUsername}" ReturnCommand="{Binding LoginCommand}" />
+                <Entry x:Name="entryPassword" Placeholder="Password" Text="{Binding LoginPassword}" ReturnCommand="{Binding LoginCommand}" IsPassword="True" />
+                <Button Text="Login" Command="{Binding LoginCommand}" />
+                <Label IsVisible="{Binding ErrorMessage, Converter={StaticResource IsNotNullConverter}}" Text="{Binding ErrorMessage}" FontSize="Small" TextColor="DarkRed" FontAttributes="Bold" Padding="0,10,0,0" />
             </VerticalStackLayout>
         </Frame>
         <Frame IsVisible="{Binding IsLoggedIn}">
-            <Button Text="Logout" Clicked="OnLogoutClicked" />
+            <VerticalStackLayout>
+                <Grid ColumnDefinitions=".08*, .9*, .1*" RowDefinitions="*,*,*">
+                    <Label Grid.ColumnSpan="2" Text="Profile" FontSize="Title" FontAttributes="Bold" Padding="0,0,0,10" />
+                    <Image Grid.Row="1" Grid.RowSpan="2" WidthRequest="60" HorizontalOptions="Start">
+                        <Image.Source>
+                            <toolkit:GravatarImageSource
+                                CacheValidity="1"
+                                CachingEnabled="True"
+                                Email="{Binding User.Email}"
+                                Image="Identicon" />
+                        </Image.Source>
+                    </Image>
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding User.Email}" Padding="0,0,0,10" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding User.Id}" Padding="0,0,0,10" />
+                    <Button Grid.Column="2" Grid.RowSpan="3" HorizontalOptions="End" VerticalOptions="Start" Text="Logout" Command="{Binding LogoutCommand}" />                    
+                </Grid>
+            </VerticalStackLayout>
         </Frame>
         <Frame IsVisible="{Binding IsLoggedIn}">
-            <VerticalStackLayout>
-                <Button Text="Load Todos" Clicked="OnLoadTodosClicked" />
-                <ListView ItemsSource="{Binding Todos}">
+            <Grid ColumnDefinitions=".5*, .5*" RowDefinitions="*,*">
+                <Label Text="Todos" FontSize="Title" FontAttributes="Bold" Padding="0,0,0,20" />
+                <Button Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" Text="↻" Command="{Binding LoadTodosCommand}" />
+                <!--<ListView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Todos}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -37,8 +58,19 @@
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView>
-            </VerticalStackLayout>
+                </ListView>-->
+                <CollectionView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Todos}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid RowDefinitions="20,*" ColumnDefinitions="50,*">
+                                <CheckBox IsChecked="{Binding Done}" />
+                                <Label Grid.Column="1" Text="{Binding Name}" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Notes}" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
         </Frame>
     </VerticalStackLayout>
 </ContentPage>

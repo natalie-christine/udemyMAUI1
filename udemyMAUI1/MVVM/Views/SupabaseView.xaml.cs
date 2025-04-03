@@ -14,19 +14,4 @@ public partial class SupabaseView : ContentPage
         BindingContext = supabaseViewModel;
 
     }
-
-    private async void OnLoginClicked(object sender, EventArgs e)
-    {
-        await supabaseViewModel.LogIn(entryUsername.Text, entryPassword.Text);
-    }
-
-    private async void OnLogoutClicked(object sender, EventArgs e)
-    {
-        await supabaseViewModel.LogOut();
-    }
-
-    private async void OnLoadTodosClicked(object sender, EventArgs e)
-    {
-        await supabaseViewModel.LoadTodos();
-    }
 }

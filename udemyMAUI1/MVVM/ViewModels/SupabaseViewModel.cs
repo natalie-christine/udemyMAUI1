@@ -1,4 +1,5 @@
-﻿using Supabase.Interfaces;
+﻿using PropertyChanged;
+using Supabase.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,69 +7,61 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using udemyMAUI1.Models.DB;
 
 namespace udemyMAUI1.MVVM.ViewModels
 {
-    public partial class SupabaseViewModel : INotifyPropertyChanged
+    [AddINotifyPropertyChangedInterface]
+    public partial class SupabaseViewModel
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
-
         private readonly Supabase.Client client;
         private Supabase.Gotrue.Session? session;
 
-        private bool isLoggedIn = false;
-        public bool IsLoggedIn { get { return isLoggedIn; } set { isLoggedIn = value; NotifyPropertyChanged(); } }
+        public string LoginUsername { get; set; } = "";
+        public string LoginPassword { get; set; } = "";
 
-        private string? errorMessage = null;
-        public string? ErrorMessage { get { return errorMessage; } set { errorMessage = value; NotifyPropertyChanged(); } }
-
-        private Supabase.Gotrue.User? user = null;
-        public Supabase.Gotrue.User? User { get { return user; } set { user = value; NotifyPropertyChanged(); } }
-
-        private List<Todo>? todos = null;
-        public List<Todo>? Todos { get { return todos; } set { todos = value; NotifyPropertyChanged(); } }
+        public bool IsLoggedIn { get; set; } = false;
+        public string? ErrorMessage { get; set; } = null;
+        public Supabase.Gotrue.User? User { get; set; } = null;
+        public List<Todo>? Todos { get; set; } = null;
 
         public SupabaseViewModel(Supabase.Client client)
         {
             this.client = client;
         }
 
-        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public async Task LogIn(string username, string password)
+        public ICommand LoginCommand => new Command(async () =>
         {
             ErrorMessage = null;
             try
             {
-                session = await client.Auth.SignIn(username, password);
+                session = await client.Auth.SignIn(LoginUsername, LoginPassword);
+                LoadTodosCommand.Execute(null);
             }
             catch (Supabase.Gotrue.Exceptions.GotrueException ex)
             {
-                ErrorMessage = ex.Message;
+                //ErrorMessage = ex.Message;
                 ErrorMessage = ex.Reason.ToString();
             }
             UpdateStatus();
-        }
+        });
 
-        public async Task LogOut()
+        public ICommand LogoutCommand => new Command(async () =>
         {
             ErrorMessage = null;
             await client.Auth.SignOut();
             session = null;
             UpdateStatus();
-        }
+        });
 
-        public async Task LoadTodos()
+        public ICommand LoadTodosCommand => new Command(async () =>
         {
             Todos = null;
             var results = await client.From<Todo>().Get();
-            await  client.From<Todo>().Where(x => x.UserId == session!.User!.Id).Get();
+            await client.From<Todo>().Where(x => x.UserId == session!.User!.Id).Get();
             Todos = results.Models;
-        }
+        });
 
         private void UpdateStatus()
         {
