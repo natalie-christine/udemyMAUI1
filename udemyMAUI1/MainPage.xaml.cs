@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using CommunityToolkit.Maui;
+﻿using System.Diagnostics;
 using CommunityToolkit.Maui.Alerts;
 using udemyMAUI1.MVVM.Views;
 
@@ -7,15 +6,29 @@ namespace udemyMAUI1
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
         bool isRandom = false;
-        string hexValue; 
-
+        StackOrientation ResponsiveStackOrientation = StackOrientation.Horizontal;
 
         public MainPage() // Most beautifully page <3
         {
             InitializeComponent();
             btnRandom_Clicked(this, new EventArgs());
+        }
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+            
+            if (width > 700)
+            {
+                HeaderContainer.Orientation = StackOrientation.Horizontal;
+                PotionContainer.Orientation = StackOrientation.Horizontal;
+            }
+            else
+            {
+                HeaderContainer.Orientation = StackOrientation.Vertical;
+                PotionContainer.Orientation = StackOrientation.Vertical;
+            }
         }
 
         private void OnCounterClicked(object sender, EventArgs e)

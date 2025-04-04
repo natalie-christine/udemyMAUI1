@@ -19,7 +19,7 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+            <StackLayout x:Name="HeaderContainer" HorizontalOptions="CenterAndExpand">
                 <ImageButton
                     VerticalOptions="Center"
                     Source="dotnet_bot.png"
@@ -34,7 +34,7 @@
                     Style="{StaticResource SubHeadline}"
                     SemanticProperties.HeadingLevel="Level2"
                     SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
-            </HorizontalStackLayout>
+            </StackLayout>
 
             <Grid Margin="20,0,20,0" ColumnDefinitions=".5*,.5*" RowDefinitions="*" RowSpacing="20" ColumnSpacing="10">
                 <ScrollView Grid.Row="0" Grid.Column="0" MaximumHeightRequest="400">
@@ -91,27 +91,29 @@
             </Grid>
 
             <Frame Margin="20,0,20,0" HorizontalOptions="FillAndExpand">
-                <HorizontalStackLayout HorizontalOptions="Center">
-
-                    <Label Text="Random Color" HorizontalTextAlignment="End" VerticalOptions="Center" />
-                    <ImageButton
-                            Margin="20,0,60,0"
+                <StackLayout x:Name="PotionContainer" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Label Text="Random Color" HorizontalTextAlignment="End" VerticalOptions="Center" />
+                        <ImageButton
+                                Margin="20,0,60,0"
+                                HeightRequest="25"
+                                Source="potion_violet.png"
+                                VerticalOptions="Center"
+                                WidthRequest="25" 
+                            Clicked="btnRandom_Clicked"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label  Text="HEX Value:" VerticalOptions="Center" />
+                        <Label x:Name="lblHex" Text="#000000" HorizontalTextAlignment="End" VerticalOptions="Center" />
+                        <ImageButton
+                            Margin="20,0,0,0"
                             HeightRequest="25"
-                            Source="potion_violet.png"
+                            Source="potion_blue.png"
                             VerticalOptions="Center"
                             WidthRequest="25" 
-                        Clicked="btnRandom_Clicked"/>
-                    <Label  Text="HEX Value:" HorizontalTextAlignment="End" VerticalOptions="Center" />
-                    <Label x:Name="lblHex" Text="#000000" HorizontalTextAlignment="End" VerticalOptions="Center" />
-                    <ImageButton
-                        Margin="20,0,0,0"
-                        HeightRequest="25"
-                        Source="potion_blue.png"
-                        VerticalOptions="Center"
-                        WidthRequest="25" 
-                        Clicked="ImageButton_Clicked_1"/>
-
-                </HorizontalStackLayout>
+                            Clicked="ImageButton_Clicked_1"/>
+                    </HorizontalStackLayout>
+                </StackLayout>
             </Frame>
 
 

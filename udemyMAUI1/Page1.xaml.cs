@@ -12,13 +12,10 @@ public partial class Page1 : ContentPage
     async Task LoadMauiAsset()
     {
         using var stream = await FileSystem.OpenAppPackageFileAsync("quotes.txt");
-		stream.Position = 0;
         using var reader = new StreamReader(stream);
 
-		while (!reader.EndOfStream)
-		{
-			quotes.Add(await reader.ReadLineAsync() ?? "nöööööööö! Jetzt nicht!");
-		}
+        var content = reader.ReadToEnd();
+        quotes.AddRange((content ?? "nöööööööö! Jetzt nicht!").Split("\n"));
     }
 
     public Page1()
