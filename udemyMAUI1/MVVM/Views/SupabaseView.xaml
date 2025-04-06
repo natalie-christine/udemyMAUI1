@@ -43,7 +43,7 @@
             </VerticalStackLayout>
         </Frame>
         <Frame IsVisible="{Binding IsLoggedIn}">
-            <Grid ColumnDefinitions=".5*, .5*" RowDefinitions="*,*">
+            <Grid ColumnDefinitions=".5*, .5*" RowDefinitions="*,*,*">
                 <Label Text="Todos" FontSize="Title" FontAttributes="Bold" Padding="0,0,0,20" />
                 <Button Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" Text="↻" Command="{Binding LoadTodosCommand}" />
                 <!--<ListView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Todos}">
@@ -70,6 +70,12 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
+                <VerticalStackLayout Grid.Row="2" Grid.ColumnSpan="2" Padding="0,30,0,0" HorizontalOptions="FillAndExpand">
+                    <Label Text="Add Todo" FontSize="Subtitle" />
+                    <Entry Placeholder="Name" Text="{Binding NewTodo.Name}" />
+                    <Entry Placeholder="Description" Text="{Binding NewTodo.Notes}" />
+                </VerticalStackLayout >
+                <Button Grid.Row="2" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" Text="Save" Command="{Binding SaveNewTodoCommand }" />
             </Grid>
         </Frame>
     </VerticalStackLayout>

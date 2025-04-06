@@ -54,7 +54,12 @@ namespace udemyMAUI1
                 })
                 .Services
                     .AddSingleton(provider => new Supabase.Client(supabaseUrl, supabaseKey, supabaseOptions))
-                    .AddSingleton<SupabaseViewModel>();
+                    .AddSingleton(provider =>
+                    {
+                        var vm = new SupabaseViewModel(provider.GetService<Supabase.Client>());
+                        vm.Init();
+                        return vm;
+                    });
 
 #if DEBUG
             builder.Logging.AddDebug();

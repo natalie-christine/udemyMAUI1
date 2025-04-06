@@ -26,9 +26,22 @@ namespace udemyMAUI1.MVVM.ViewModels
         public Supabase.Gotrue.User? User { get; set; } = null;
         public List<Todo>? Todos { get; set; } = null;
 
-        public SupabaseViewModel(Supabase.Client client)
+        public Todo? NewTodo { get; set; } = new Todo();
+
+        public SupabaseViewModel(Supabase.Client _client)
         {
-            this.client = client;
+            client = _client;
+        }
+
+        public async Task Init()
+        {
+            client.Auth.LoadSession();
+            session = await client.Auth.RetrieveSessionAsync();
+            if (session != null)
+            {
+                LoadTodosCommand.Execute(null);
+            }
+            UpdateStatus();
         }
 
         public ICommand LoginCommand => new Command(async () =>
@@ -61,6 +74,18 @@ namespace udemyMAUI1.MVVM.ViewModels
             var results = await client.From<Todo>().Get();
             await client.From<Todo>().Where(x => x.UserId == session!.User!.Id).Get();
             Todos = results.Models;
+        });
+
+        public ICommand SaveNewTodoCommand => new Command(async () => {
+            if (NewTodo != null)
+            {
+                NewTodo.Done = false;
+                NewTodo.UserId = session.User.Id;
+                await client.From<Todo>().Insert(NewTodo);
+                NewTodo = new Todo();
+
+                LoadTodosCommand.Execute(null);
+            }
         });
 
         private void UpdateStatus()
