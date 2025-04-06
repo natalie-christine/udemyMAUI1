@@ -8,6 +8,7 @@
 
     <Color x:Key="DynamicPrimary">#D600AA</Color>
     <Color x:Key="DynamicPrimaryLight">#D600AA</Color>
+    <Color x:Key="DynamicPrimaryDark">#D600AA</Color>
     <Color x:Key="DynamicPrimaryText">#D600AA</Color>
 
     <Color x:Key="Primary">#512BD4</Color>

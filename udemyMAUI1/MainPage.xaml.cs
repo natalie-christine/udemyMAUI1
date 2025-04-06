@@ -118,6 +118,7 @@ namespace udemyMAUI1
 
             Application.Current.Resources["DynamicPrimary"] = color.ToHex();
             Application.Current.Resources["DynamicPrimaryLight"] = color.WithLuminosity(color.GetLuminosity() + 0.2f).ToHex();
+            Application.Current.Resources["DynamicPrimaryDark"] = color.WithLuminosity(color.GetLuminosity() - 0.2f).ToHex();
             Application.Current.Resources["DynamicPrimaryText"] = textColor.ToHex();
         }
 

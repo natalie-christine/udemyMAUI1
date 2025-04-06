@@ -90,7 +90,7 @@
                 </Frame>
             </Grid>
 
-            <Frame Margin="20,0,20,0" HorizontalOptions="FillAndExpand">
+            <Frame Margin="20,0,20,0">
                 <StackLayout x:Name="PotionContainer" HorizontalOptions="Center">
                     <HorizontalStackLayout>
                         <Label Text="Random Color" HorizontalTextAlignment="End" VerticalOptions="Center" />
