@@ -60,6 +60,10 @@ namespace udemyMAUI1
         {
             Navigation.PushAsync(new SupabaseView());
         }
+        private void OnTaskerClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TaskerPage());
+        }
         private void ImageButton_Clicked(object sender, EventArgs e)
         {
             //DisplayAlert("Hallo", "Welt :)", "Schließen");

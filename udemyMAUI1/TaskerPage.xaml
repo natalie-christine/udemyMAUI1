@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:udemyMAUI1.Converter"
+             x:Class="udemyMAUI1.TaskerPage"
+             Title="TaskerPage">
+
+    <ContentPage.Resources>
+        <converters:ColorConverter x:Key="ColorConverter" />
+    </ContentPage.Resources>
+    
+    <Grid Margin="15" RowDefinitions=".1*,.3*,.7*">
+        <Label Text="My Tasks" FontSize="Title" FontAttributes="Bold" />
+        <Grid Grid.Row="1" RowDefinitions=".2*,.8*">
+            <Label Text="Categories" FontSize="Caption" />
+            <CollectionView Grid.Row="1" ItemsSource="{Binding Categories}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="5" Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" WidthRequest="200">
+                            <RoundRectangle BackgroundColor="White" CornerRadius="8" Shadow="{StaticResource shadow}" />
+                            <Frame BorderColor="{DynamicResource DynamicPrimaryLight}" BackgroundColor="White" />
+                            <VerticalStackLayout Padding="15" Spacing="10">
+                                <Label Text="{Binding PendingTasks, StringFormat='{0} Tasks'}" FontSize="Caption" />
+                                <Label Text="{Binding CategoryName}" FontAttributes="Bold" />
+                                <ProgressBar Progress=".5" ProgressColor="{Binding Color, Converter={converters:ColorConverter}}" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Label Text="Tasks" FontSize="Caption" />
+
+        </Grid>
+    </Grid>
+    
+</ContentPage>

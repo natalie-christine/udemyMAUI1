@@ -62,18 +62,18 @@
                                 Grid.Row="3" Grid.Column="0"
                                 Text="Flyout"
                                 Clicked="OnFlyoutClicked" />
-
                         <Button
                                 Grid.Row="3" Grid.Column="0"
                                 Text="MAUIVERTER"
                                 Clicked="OnMauiverterClicked" />
                         <Button
                                 Grid.Row="3" Grid.Column="0"
-                                Text="Supabase"
-                                Clicked="OnSupabaseClicked" />
+                                Text="Tasker"
+                                Clicked="OnTaskerClicked" />
                         <Button
                                 Grid.Row="3" Grid.Column="0"
-                                Text="leer" />
+                                Text="Supabase"
+                                Clicked="OnSupabaseClicked" />
                     </VerticalStackLayout>
                 </ScrollView>
 
