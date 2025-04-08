@@ -20,7 +20,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10" WidthRequest="250">
-                            <RoundRectangle BackgroundColor="White" CornerRadius="8" Shadow="{StaticResource shadow}" />
+                            <RoundRectangle BackgroundColor="White" CornerRadius="8" StyleClass="shadow" />
                             <Frame BorderColor="{DynamicResource DynamicPrimaryLight}" BackgroundColor="White" />
                             <VerticalStackLayout Padding="15" Spacing="10">
                                 <Label Text="{Binding PendingTasks, StringFormat='{0} Tasks'}" FontSize="Caption" TextColor="Black" />

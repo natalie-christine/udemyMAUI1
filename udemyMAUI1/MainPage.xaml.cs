@@ -124,6 +124,8 @@ namespace udemyMAUI1
             Application.Current.Resources["DynamicPrimaryLight"] = color.WithLuminosity(color.GetLuminosity() + 0.2f).ToHex();
             Application.Current.Resources["DynamicPrimaryDark"] = color.WithLuminosity(color.GetLuminosity() - 0.2f).ToHex();
             Application.Current.Resources["DynamicPrimaryText"] = textColor.ToHex();
+
+            Application.Current.Resources["DynamicPrimaryBrush"] = new SolidColorBrush(color);
         }
 
         private async void ImageButton_Clicked_1(object sender, EventArgs e)

@@ -11,6 +11,8 @@
     <Color x:Key="DynamicPrimaryDark">#D600AA</Color>
     <Color x:Key="DynamicPrimaryText">#D600AA</Color>
 
+    <SolidColorBrush x:Key="DynamicPrimaryBrush" Color="#D600AA"/>
+
     <Color x:Key="Primary">#512BD4</Color>
     <Color x:Key="PrimaryDark">#ac99ea</Color>
     <Color x:Key="PrimaryDarkText">#242424</Color>

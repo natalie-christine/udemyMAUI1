@@ -323,14 +323,12 @@
         </Setter>
     </Style>
 
-    <Style TargetType="Shadow">
-        <Setter Property="Radius" Value="4" />
-        <Setter Property="Opacity" Value="0.6" />
-        <Setter Property="Brush" Value="{DynamicResource DynamicPrimaryDark}" />
-        <Setter Property="Offset" Value="4,4" />
-    </Style>
 
-    <Shadow x:Key="shadow" Brush="{DynamicResource DynamicPrimaryDark}" Opacity="0.6" Radius="4" Offset="4,4" />
+    <Style TargetType="RoundRectangle" Class="shadow">
+        <Setter Property="Shadow">
+            <Shadow Brush="{DynamicResource DynamicPrimaryBrush}" Opacity="0.6" Radius="4" Offset="4,4" />
+        </Setter>
+    </Style>
 
     <Style TargetType="Slider">
         <Setter Property="MinimumTrackColor" Value="{DynamicResource DynamicPrimaryLight}" />
