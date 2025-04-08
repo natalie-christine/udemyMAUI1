@@ -19,6 +19,15 @@ namespace udemyMAUI1.MVVM.ViewModels
         public TaskerViewModel()
         {
             FillData();
+            Tasks.CollectionChanged += Tasks_ColectionChanged;
+
+
+        }
+
+
+        private void Tasks_ColectionChanged(Object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            UpdateData();
         }
 
         private void FillData()
