@@ -83,6 +83,9 @@
 	  <MauiXaml Update="MVVM\Views\MenuView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="MVVM\Views\NewTask.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="MVVM\Views\SupabaseView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

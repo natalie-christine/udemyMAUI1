@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyChanged;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using udemyMAUI1.MVVM.Models;
 
 namespace udemyMAUI1.MVVM.ViewModels
 {
+    [AddINotifyPropertyChangedInterface]
     public class TaskerViewModel
     {
         public ObservableCollection<Category> Categories { get; set; }
@@ -78,7 +80,7 @@ namespace udemyMAUI1.MVVM.ViewModels
             UpdateData();
         }
 
-        private void UpdateData()
+        public void UpdateData()
         {
             foreach (var c in Categories)
             {

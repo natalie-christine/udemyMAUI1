@@ -138,6 +138,13 @@
         </Setter>
     </Style>
 
+    <Style x:Key="task" TargetType="Entry">
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="PlaceholderColor" Value="{DynamicResource DynamicPrimaryLight}" />
+    </Style>
+
     <Style TargetType="Frame">
         <Setter Property="HasShadow" Value="False" />
         <Setter Property="BorderColor" Value="{AppThemeBinding Light={DynamicResource DynamicPrimaryLight}, Dark={DynamicResource DynamicPrimaryLight}}" />
@@ -433,6 +440,17 @@
         <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Magenta}, Dark={StaticResource White}}" />
         <Setter Property="UnselectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
+    </Style>
+
+    <Style x:Key="circularButton" TargetType="Button">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="100" />
+        <Setter Property="TextColor" Value="{DynamicResource DynamicPrimaryText}" />
+        <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="WidthRequest" Value="100" />
+        <Setter Property="VerticalOptions" Value="End" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="CornerRadius" Value="30" />
     </Style>
 
 </ResourceDictionary>

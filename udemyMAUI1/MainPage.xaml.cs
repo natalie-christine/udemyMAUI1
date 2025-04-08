@@ -62,7 +62,7 @@ namespace udemyMAUI1
         }
         private void OnTaskerClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new TaskerPage());
+            Navigation.PushAsync(new TaskerPage(new NewTask()));
         }
         private void ImageButton_Clicked(object sender, EventArgs e)
         {
