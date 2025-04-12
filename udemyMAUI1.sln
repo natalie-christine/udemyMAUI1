@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "udemyMAUI1", "udemyMAUI1\udemyMAUI1.csproj", "{DC01B465-EC91-4FF6-8085-739F78FDFC40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiComponentLib", "MauiComponentLib\MauiComponentLib.csproj", "{EAF1411E-6550-479E-B0E9-87E8F05BFF7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{DC01B465-EC91-4FF6-8085-739F78FDFC40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC01B465-EC91-4FF6-8085-739F78FDFC40}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC01B465-EC91-4FF6-8085-739F78FDFC40}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EAF1411E-6550-479E-B0E9-87E8F05BFF7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF1411E-6550-479E-B0E9-87E8F05BFF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF1411E-6550-479E-B0E9-87E8F05BFF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF1411E-6550-479E-B0E9-87E8F05BFF7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,15 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:complib="clr-namespace:MauiComponentLib.Layouts;assembly=MauiComponentLib"
+             xmlns:comp="clr-namespace:udemyMAUI1.Components"
              x:Class="udemyMAUI1.MainPage"
              Title="MAUI Demo App"
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
-        <!--<Color x:Key="Primary">#0061B6</Color>
-        <Color x:Key="Secondary">#83A0CD</Color>
-        <Color x:Key="Tertiary">#000000</Color>-->
-
         <Style TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
             <Setter Property="FontSize" Value="20" />
         </Style>
@@ -36,8 +34,8 @@
                     SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
             </StackLayout>
 
-            <Grid Margin="20,0,20,0" ColumnDefinitions=".5*,.5*" RowDefinitions="*" RowSpacing="20" ColumnSpacing="10">
-                <ScrollView Grid.Row="0" Grid.Column="0" MaximumHeightRequest="400">
+            <complib:ResponsiveLayout HorizontalModeHeight="380" VerticalModeHeight="380">
+                <ScrollView>
                     <VerticalStackLayout x:Name="buttonContainer" Spacing="20" Padding="0,0,20,0" >
                         <Button
                                 x:Name="CounterBtn"
@@ -77,43 +75,57 @@
                     </VerticalStackLayout>
                 </ScrollView>
 
-                <Frame x:Name="SliderContainer" Grid.Row="0" Grid.Column="1">
+                <Frame x:Name="SliderContainer">
                     <VerticalStackLayout Spacing="15" VerticalOptions="Center">
-                        <Label FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Text="Color Maker" />
-                        <Label Text="Red Value:" />
+                        <Label FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Text="Color Maker" TextColor="{DynamicResource DynamicPrimaryText}" />
+                        <Label Text="Red Value:" TextColor="{DynamicResource DynamicPrimaryText}" />
                         <Slider x:Name="sldRed" ValueChanged="Slider_ValueChanged" />
-                        <Label Text="Green Value:" />
+                        <Label Text="Green Value:" TextColor="{DynamicResource DynamicPrimaryText}" />
                         <Slider x:Name="sldGreen" ValueChanged="Slider_ValueChanged" />
-                        <Label Text="Blue Value:" />
+                        <Label Text="Blue Value:" TextColor="{DynamicResource DynamicPrimaryText}" />
                         <Slider x:Name="sldBlue" ValueChanged="Slider_ValueChanged" />
                     </VerticalStackLayout>
                 </Frame>
-            </Grid>
+            </complib:ResponsiveLayout>
 
-            <Frame Margin="20,0,20,0">
-                <StackLayout x:Name="PotionContainer" HorizontalOptions="Center">
-                    <HorizontalStackLayout>
-                        <Label Text="Random Color" HorizontalTextAlignment="End" VerticalOptions="Center" />
-                        <ImageButton
-                                Margin="20,0,60,0"
+            <Frame>
+                <VerticalStackLayout>
+                    <StackLayout x:Name="PotionContainer" HorizontalOptions="Center">
+                        <HorizontalStackLayout>
+                            <Label Text="Random Color" HorizontalTextAlignment="End" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
+                            <ImageButton
+                                    Margin="20,0,60,0"
+                                    HeightRequest="25"
+                                    Source="potion_violet.png"
+                                    VerticalOptions="Center"
+                                    WidthRequest="25" 
+                                Clicked="btnRandom_Clicked"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout>
+                            <Label Text="HEX Value:" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
+                            <Label x:Name="lblHex" Text="#000000" HorizontalTextAlignment="End" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
+                            <ImageButton
+                                Margin="20,0,0,0"
                                 HeightRequest="25"
-                                Source="potion_violet.png"
+                                Source="potion_blue.png"
                                 VerticalOptions="Center"
                                 WidthRequest="25" 
-                            Clicked="btnRandom_Clicked"/>
+                                Clicked="ImageButton_Clicked_1"/>
+                        </HorizontalStackLayout>
+                    </StackLayout>
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <ContentView>
+                            <Frame BackgroundColor="White" Margin="0" Padding="10" WidthRequest="200">
+                                <comp:ColorTiles />
+                            </Frame>
+                        </ContentView>
+                        <ContentView>
+                            <Frame BackgroundColor="Black" Margin="0" Padding="10" WidthRequest="200">
+                                <comp:ColorTiles />
+                            </Frame>
+                        </ContentView>
                     </HorizontalStackLayout>
-                    <HorizontalStackLayout>
-                        <Label  Text="HEX Value:" VerticalOptions="Center" />
-                        <Label x:Name="lblHex" Text="#000000" HorizontalTextAlignment="End" VerticalOptions="Center" />
-                        <ImageButton
-                            Margin="20,0,0,0"
-                            HeightRequest="25"
-                            Source="potion_blue.png"
-                            VerticalOptions="Center"
-                            WidthRequest="25" 
-                            Clicked="ImageButton_Clicked_1"/>
-                    </HorizontalStackLayout>
-                </StackLayout>
+                </VerticalStackLayout>
             </Frame>
 
 

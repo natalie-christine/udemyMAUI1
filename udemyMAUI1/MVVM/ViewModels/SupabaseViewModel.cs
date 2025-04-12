@@ -1,4 +1,5 @@
-﻿using PropertyChanged;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using PropertyChanged;
 using Supabase.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,21 +13,27 @@ using udemyMAUI1.Models.DB;
 
 namespace udemyMAUI1.MVVM.ViewModels
 {
-    [AddINotifyPropertyChangedInterface]
-    public partial class SupabaseViewModel
+    public partial class SupabaseViewModel : ObservableObject
     {
         private readonly Supabase.Client client;
         private Supabase.Gotrue.Session? session;
 
-        public string LoginUsername { get; set; } = "";
-        public string LoginPassword { get; set; } = "";
+        [ObservableProperty]
+        private string loginUsername = "";
+        [ObservableProperty]
+        private string loginPassword = "";
 
-        public bool IsLoggedIn { get; set; } = false;
-        public string? ErrorMessage { get; set; } = null;
-        public Supabase.Gotrue.User? User { get; set; } = null;
-        public List<Todo>? Todos { get; set; } = null;
+        [ObservableProperty]
+        private bool isLoggedIn = false;
+        [ObservableProperty]
+        private string? errorMessage = null;
+        [ObservableProperty]
+        private Supabase.Gotrue.User? user = null;
+        [ObservableProperty]
+        private List<Todo>? todos = null;
 
-        public Todo? NewTodo { get; set; } = new Todo();
+        [ObservableProperty]
+        private Todo? newTodo = new Todo();
 
         public SupabaseViewModel(Supabase.Client _client)
         {

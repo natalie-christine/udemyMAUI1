@@ -13,6 +13,28 @@
 
     <SolidColorBrush x:Key="DynamicPrimaryBrush" Color="#D600AA"/>
 
+    <Color x:Key="DynamicSecondary">#D600AA</Color>
+    <Color x:Key="DynamicSecondaryLight">#D600AA</Color>
+    <Color x:Key="DynamicSecondaryDark">#D600AA</Color>
+    <Color x:Key="DynamicSecondaryText">#D600AA</Color>
+
+    <SolidColorBrush x:Key="DynamicSecondaryBrush" Color="#D600AA"/>
+
+    <Color x:Key="DynamicTertiary">#D600AA</Color>
+    <Color x:Key="DynamicTertiaryLight">#D600AA</Color>
+    <Color x:Key="DynamicTertiaryDark">#D600AA</Color>
+    <Color x:Key="DynamicTertiaryText">#D600AA</Color>
+
+    <SolidColorBrush x:Key="DynamicTertiaryBrush" Color="#D600AA"/>
+
+    <Color x:Key="DynamicQuartary">#D600AA</Color>
+    <Color x:Key="DynamicQuartaryLight">#D600AA</Color>
+    <Color x:Key="DynamicQuartaryDark">#D600AA</Color>
+    <Color x:Key="DynamicQuartaryText">#D600AA</Color>
+
+    <SolidColorBrush x:Key="DynamicQuartaryBrush" Color="#D600AA"/>
+
+
     <Color x:Key="Primary">#512BD4</Color>
     <Color x:Key="PrimaryDark">#ac99ea</Color>
     <Color x:Key="PrimaryDarkText">#242424</Color>

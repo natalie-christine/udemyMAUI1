@@ -110,22 +110,30 @@ namespace udemyMAUI1
 
         private void SetColor(Color color)
         {
-            Color textColor;
-            if (color.GetLuminosity() > 0.5)
+            void SetColors(string p, Color c)
             {
-                textColor = Color.FromRgb(0, 0, 0);
-            }
-            else
-            {
-                textColor = Color.FromRgb(255, 255, 255);
+                Application.Current.Resources[p] = c.ToHex();
+                Application.Current.Resources[p + "Light"] = c.WithLuminosity(c.GetLuminosity() + 0.2f).ToHex();
+                Application.Current.Resources[p + "Dark"] = c.WithLuminosity(c.GetLuminosity() - 0.2f).ToHex();
+                Application.Current.Resources[p + "Text"] = c.GetLuminosity() > 0.5 ?
+                        c.WithLuminosity(0.1f).ToHex() :
+                        c.WithLuminosity(0.9f).ToHex();
+
+                Application.Current.Resources[p + "Brush"] = new SolidColorBrush(c);
             }
 
-            Application.Current.Resources["DynamicPrimary"] = color.ToHex();
-            Application.Current.Resources["DynamicPrimaryLight"] = color.WithLuminosity(color.GetLuminosity() + 0.2f).ToHex();
-            Application.Current.Resources["DynamicPrimaryDark"] = color.WithLuminosity(color.GetLuminosity() - 0.2f).ToHex();
-            Application.Current.Resources["DynamicPrimaryText"] = textColor.ToHex();
+            Color RotateColor(Color c, float r)
+            {
+                c.ToHsl(out var h, out var s, out var l);
+                h += r;
+                h %= 1.0f;
+                return Color.FromHsla(h, s, l);
+            }
 
-            Application.Current.Resources["DynamicPrimaryBrush"] = new SolidColorBrush(color);
+            SetColors("DynamicPrimary", color);
+            SetColors("DynamicSecondary", RotateColor(color, 0.50f));
+            SetColors("DynamicTertiary", RotateColor(color, 0.25f));
+            SetColors("DynamicQuartary", RotateColor(color, 0.75f));
         }
 
         private async void ImageButton_Clicked_1(object sender, EventArgs e)
