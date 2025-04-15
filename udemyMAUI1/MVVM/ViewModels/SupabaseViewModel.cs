@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using PropertyChanged;
 using Supabase.Interfaces;
 using System;
@@ -46,18 +47,19 @@ namespace udemyMAUI1.MVVM.ViewModels
             session = await client.Auth.RetrieveSessionAsync();
             if (session != null)
             {
-                LoadTodosCommand.Execute(null);
+                LoadTodos();
             }
             UpdateStatus();
         }
 
-        public ICommand LoginCommand => new Command(async () =>
+        [RelayCommand]
+        async Task Login()
         {
             ErrorMessage = null;
             try
             {
                 session = await client.Auth.SignIn(LoginUsername, LoginPassword);
-                LoadTodosCommand.Execute(null);
+                LoadTodos();
             }
             catch (Supabase.Gotrue.Exceptions.GotrueException ex)
             {
@@ -65,25 +67,29 @@ namespace udemyMAUI1.MVVM.ViewModels
                 ErrorMessage = ex.Reason.ToString();
             }
             UpdateStatus();
-        });
+        }
 
-        public ICommand LogoutCommand => new Command(async () =>
+        [RelayCommand]
+        async Task Logout()
         {
             ErrorMessage = null;
             await client.Auth.SignOut();
             session = null;
             UpdateStatus();
-        });
+        }
 
-        public ICommand LoadTodosCommand => new Command(async () =>
+        [RelayCommand]
+        async Task LoadTodos()
         {
             Todos = null;
             var results = await client.From<Todo>().Get();
-            await client.From<Todo>().Where(x => x.UserId == session!.User!.Id).Get();
+            // await client.From<Todo>().Where(x => x.UserId == session!.User!.Id).Get();
             Todos = results.Models;
-        });
+        }
 
-        public ICommand SaveNewTodoCommand => new Command(async () => {
+        [RelayCommand]
+        async Task SaveNewTodo()
+        {
             if (NewTodo != null)
             {
                 NewTodo.Done = false;
@@ -91,9 +97,9 @@ namespace udemyMAUI1.MVVM.ViewModels
                 await client.From<Todo>().Insert(NewTodo);
                 NewTodo = new Todo();
 
-                LoadTodosCommand.Execute(null);
+                LoadTodos();
             }
-        });
+        }
 
         private void UpdateStatus()
         {
