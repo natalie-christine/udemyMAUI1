@@ -22,12 +22,10 @@ namespace udemyMAUI1
             if (width > 700)
             {
                 HeaderContainer.Orientation = StackOrientation.Horizontal;
-                PotionContainer.Orientation = StackOrientation.Horizontal;
             }
             else
             {
                 HeaderContainer.Orientation = StackOrientation.Vertical;
-                PotionContainer.Orientation = StackOrientation.Vertical;
             }
         }
 
