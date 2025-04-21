@@ -88,20 +88,20 @@
                 </Frame>
             </complib:ResponsiveLayout>
 
-            <Frame>
-                <VerticalStackLayout>
-                    <StackLayout x:Name="PotionContainer" HorizontalOptions="Center">
-                        <HorizontalStackLayout>
+            <Frame MinimumHeightRequest="250">
+                <Grid RowDefinitions="100,100" ColumnDefinitions=".3*,.5*">
+                   
+                        <HorizontalStackLayout Grid.Row="0" Grid.Column="1">
                             <Label Text="Random Color" HorizontalTextAlignment="End" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
                             <ImageButton
-                                    Margin="20,0,60,0"
+                                    Margin="20,0,60,20"
                                     HeightRequest="25"
                                     Source="potion_violet.png"
                                     VerticalOptions="Center"
                                     WidthRequest="25" 
                                 Clicked="btnRandom_Clicked"/>
                         </HorizontalStackLayout>
-                        <HorizontalStackLayout>
+                    <HorizontalStackLayout Grid.Row="1" Grid.Column="1">
                             <Label Text="HEX Value:" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
                             <Label x:Name="lblHex" Text="#000000" HorizontalTextAlignment="End" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
                             <ImageButton
@@ -112,20 +112,20 @@
                                 WidthRequest="25" 
                                 Clicked="ImageButton_Clicked_1"/>
                         </HorizontalStackLayout>
-                    </StackLayout>
-                    <HorizontalStackLayout HorizontalOptions="Center">
-                        <ContentView>
-                            <Frame BackgroundColor="White" Margin="0" Padding="10" WidthRequest="200">
+
+
+                    <ContentView  Grid.Row="0" Grid.Column="0">
+                        <Frame BackgroundColor="White" Padding="20" WidthRequest="220">
                                 <comp:ColorTiles />
                             </Frame>
                         </ContentView>
-                        <ContentView>
-                            <Frame BackgroundColor="Black" Margin="0" Padding="10" WidthRequest="200">
+                    <ContentView Grid.Row="1" Grid.Column="0" >
+                            <Frame BackgroundColor="Black" Padding="20" WidthRequest="220" >
                                 <comp:ColorTiles />
                             </Frame>
                         </ContentView>
-                    </HorizontalStackLayout>
-                </VerticalStackLayout>
+                 
+                </Grid>
             </Frame>
 
 
