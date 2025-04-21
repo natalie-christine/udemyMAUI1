@@ -134,6 +134,8 @@ namespace udemyMAUI1
             SetColors("DynamicSecondary", RotateColor(color, 0.50f));
             SetColors("DynamicTertiary", RotateColor(color, 0.25f));
             SetColors("DynamicQuartary", RotateColor(color, 0.75f));
+
+            lblHex.Text = color.ToHex();
         }
 
         private async void ImageButton_Clicked_1(object sender, EventArgs e)
