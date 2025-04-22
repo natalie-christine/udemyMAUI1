@@ -12,7 +12,7 @@
             <Setter Property="Spacing" Value="15" />
             <Setter Property="VerticalOptions" Value="Center" />
         </Style>
-        <Style TargetType="Label">
+        <Style x:Key="lblHeader" TargetType="Label">
             <Setter Property="FontFamily" Value="GameOfSquids" />
             <Setter Property="FontSize" Value="Large" />
             <Setter Property="TextColor" Value="{DynamicResource DynamicPrimaryText}" />
@@ -23,24 +23,24 @@
     <ScrollView>
         <VerticalStackLayout Style="{StaticResource MainStackLayout}" VerticalOptions="Start">
             <SearchBar Placeholder="Search" VerticalOptions="Center" />
-            <Label Text="Paris" FontSize="Header" />
-            <Label Text="Datum, 2015" FontSize="Small" />
+            <Label Text="Paris" FontSize="Header" Style="{StaticResource lblHeader }" />
+            <Label Text="Datum, 2015" FontSize="Small" Style="{StaticResource lblHeader }" />
             <skia:SKLottieView RepeatCount="-1" Source="foggy.json" HeightRequest="400" />
             <Grid ColumnDefinitions="*,*,*">
                 <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <Label Text="Temp" FontSize="Small" />
-                    <Label Text="25°C" FontSize="Small" FontAttributes="Bold" />
+                    <Label Text="Temp" FontSize="Small" Style="{StaticResource lblHeader }"  />
+                    <Label Text="25°C" FontSize="Small" FontAttributes="Bold"  Style="{StaticResource lblHeader }"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="10">
-                    <Label Text="Wind" FontSize="Small" />
-                    <Label Text="10 km/h" FontSize="Small" FontAttributes="Bold" />
+                    <Label Text="Wind" FontSize="Small"  Style="{StaticResource lblHeader }"/>
+                    <Label Text="10 km/h" FontSize="Small" FontAttributes="Bold" Style="{StaticResource lblHeader }"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" Spacing="10">
-                    <Label Text="Weather" FontSize="Small" />
-                    <Label Text="Sunny" FontSize="Small" FontAttributes="Bold" />
+                    <Label Text="Weather" FontSize="Small" Style="{StaticResource lblHeader }"/>
+                    <Label Text="Sunny" FontSize="Small" FontAttributes="Bold" Style="{StaticResource lblHeader }" />
                 </VerticalStackLayout>
             </Grid>
-            <CollectionView>
+            <CollectionView Margin="0,0,0,50">
                 <CollectionView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>1</x:String>
@@ -55,14 +55,14 @@
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame BackgroundColor="{DynamicResource DynamicSecondaryLight}">
+                        <Frame BackgroundColor="{DynamicResource DynamicSecondaryLight}" MinimumWidthRequest="250" CornerRadius="30"  >
                             <VerticalStackLayout>
                                 <skia:SKLottieView IsAnimationEnabled="False"
-                                                   HeightRequest="50" WidthRequest="50"
-                                                   Source="mist.json" />
-                                <Label Text="Datum" TextColor="Black" FontSize="Small" />
-                                <Label Text="50°C" TextColor="Black" FontSize="Small" />
-                                <Label Text="Misty" TextColor="Black" FontSize="Small" />
+                                                   HeightRequest="100" WidthRequest="100"
+                                                   Source="mist.json"  />
+                                <Label Text="Datum" TextColor="Black" FontSize="Small" HorizontalTextAlignment="Center" />
+                                <Label Text="50°C" TextColor="Black" FontSize="Small" HorizontalTextAlignment="Center" />
+                                <Label Text="Misty" TextColor="Black" FontSize="Small" HorizontalTextAlignment="Center" />
                             </VerticalStackLayout>
                         </Frame>
                     </DataTemplate>
