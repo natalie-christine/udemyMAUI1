@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:Class="udemyMAUI1.MVVM.Views.WeatherView"
+             BackgroundColor="{DynamicResource DynamicPrimaryLight}"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <Style x:Key="MainStackLayout" TargetType="VerticalStackLayout">
+            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="Spacing" Value="15" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="GameOfSquids" />
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="TextColor" Value="{DynamicResource DynamicPrimaryText}" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Style="{StaticResource MainStackLayout}" VerticalOptions="Start">
+            <SearchBar Placeholder="Search" VerticalOptions="Center" />
+            <Label Text="Paris" FontSize="Header" />
+            <Label Text="Datum, 2015" FontSize="Small" />
+            <skia:SKLottieView RepeatCount="-1" Source="foggy.json" HeightRequest="400" />
+            <Grid ColumnDefinitions="*,*,*">
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <Label Text="Temp" FontSize="Small" />
+                    <Label Text="25°C" FontSize="Small" FontAttributes="Bold" />
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="10">
+                    <Label Text="Wind" FontSize="Small" />
+                    <Label Text="10 km/h" FontSize="Small" FontAttributes="Bold" />
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" Spacing="10">
+                    <Label Text="Weather" FontSize="Small" />
+                    <Label Text="Sunny" FontSize="Small" FontAttributes="Bold" />
+                </VerticalStackLayout>
+            </Grid>
+            <CollectionView>
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                    </x:Array>
+                </CollectionView.ItemsSource>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="10" Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="{DynamicResource DynamicSecondaryLight}">
+                            <VerticalStackLayout>
+                                <skia:SKLottieView IsAnimationEnabled="False"
+                                                   HeightRequest="50" WidthRequest="50"
+                                                   Source="mist.json" />
+                                <Label Text="Datum" TextColor="Black" FontSize="Small" />
+                                <Label Text="50°C" TextColor="Black" FontSize="Small" />
+                                <Label Text="Misty" TextColor="Black" FontSize="Small" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>

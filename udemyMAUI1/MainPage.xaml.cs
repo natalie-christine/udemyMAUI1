@@ -40,6 +40,11 @@ namespace udemyMAUI1
             Navigation.PushAsync(new Page2());
         }
 
+        private void OnWeatherClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new WeatherView());
+        }
+
         private void OnTabbedClicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new Tabb1());

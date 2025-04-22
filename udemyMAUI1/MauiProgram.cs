@@ -5,6 +5,7 @@ using Supabase;
 using System;
 using udemyMAUI1.MVVM.ViewModels;
 using udemyMAUI1.Helper;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace udemyMAUI1
 {
@@ -29,6 +30,7 @@ namespace udemyMAUI1
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .UseSkiaSharp()
                 .ConfigureSyncfusionCore()
                 .ConfigureFonts(fonts =>
                 {
