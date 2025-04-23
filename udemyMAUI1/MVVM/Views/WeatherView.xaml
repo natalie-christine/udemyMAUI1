@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             xmlns:converters="clr-namespace:udemyMAUI1.Converter"
              x:Class="udemyMAUI1.MVVM.Views.WeatherView"
              BackgroundColor="{DynamicResource DynamicPrimaryLight}"
              NavigationPage.HasNavigationBar="False">
@@ -18,38 +19,32 @@
             <Setter Property="TextColor" Value="{DynamicResource DynamicPrimaryText}" />
             <Setter Property="HorizontalTextAlignment" Value="Center" />
         </Style>
+
+        <converters:CodeToWeatherConverter x:Key="CodeToWeatherConverter" />
+        <converters:CodeToLottieConverter x:Key="CodeToLottieConverter" />
     </ContentPage.Resources>
 
     <ScrollView>
         <VerticalStackLayout Style="{StaticResource MainStackLayout}" VerticalOptions="Start">
             <SearchBar x:Name="SearchBar" Placeholder="Search" VerticalOptions="Center" SearchCommand="{Binding SearchCommand}" SearchCommandParameter="{Binding Source={x:Reference SearchBar}, Path=Text}" />
-            <Label Text="Paris" FontSize="Header" Style="{StaticResource lblHeader }" />
-            <Label Text="Datum, 2015" FontSize="Small" Style="{StaticResource lblHeader }" />
-            <skia:SKLottieView RepeatCount="-1" Source="foggy.json" HeightRequest="400" />
-            <Grid ColumnDefinitions="*,*,*">
+            <Label Text="{Binding PlaceName}" FontSize="Header" Style="{StaticResource lblHeader }" />
+            <Label IsVisible="{Binding IsVisible}" Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="Small" Style="{StaticResource lblHeader }" />
+            <skia:SKLottieView RepeatCount="-1" Source="{Binding WeatherData.current_weather.weathercode, Converter={StaticResource CodeToLottieConverter}}" HeightRequest="400" />
+            <Grid IsVisible="{Binding IsVisible}" ColumnDefinitions="*,*,*">
                 <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
                     <Label Text="Temp" FontSize="Small" Style="{StaticResource lblHeader }"  />
-                    <Label Text="25°C" FontSize="Small" FontAttributes="Bold"  Style="{StaticResource lblHeader }"/>
+                    <Label Text="{Binding WeatherData.current_weather.temperature, StringFormat='{0}°C'}" FontSize="Small" FontAttributes="Bold"  Style="{StaticResource lblHeader }"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="10">
                     <Label Text="Wind" FontSize="Small"  Style="{StaticResource lblHeader }"/>
-                    <Label Text="10 km/h" FontSize="Small" FontAttributes="Bold" Style="{StaticResource lblHeader }"/>
+                    <Label Text="{Binding WeatherData.current_weather.windspeed, StringFormat='{0} km/h'}" FontSize="Small" FontAttributes="Bold" Style="{StaticResource lblHeader }"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" Spacing="10">
                     <Label Text="Weather" FontSize="Small" Style="{StaticResource lblHeader }"/>
-                    <Label Text="Sunny" FontSize="Small" FontAttributes="Bold" Style="{StaticResource lblHeader }" />
+                    <Label Text="{Binding WeatherData.current_weather.weathercode, Converter={StaticResource CodeToWeatherConverter}}" FontSize="Small" FontAttributes="Bold" Style="{StaticResource lblHeader }" />
                 </VerticalStackLayout>
             </Grid>
-            <CollectionView Margin="0,0,0,50">
-                <CollectionView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>1</x:String>
-                        <x:String>2</x:String>
-                        <x:String>3</x:String>
-                        <x:String>4</x:String>
-                        <x:String>5</x:String>
-                    </x:Array>
-                </CollectionView.ItemsSource>
+            <CollectionView Margin="0,0,0,50" ItemsSource="{Binding WeatherData.daily2}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="10" Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
@@ -57,12 +52,12 @@
                     <DataTemplate>
                         <Frame BackgroundColor="{DynamicResource DynamicSecondaryLight}" MinimumWidthRequest="250" CornerRadius="30"  >
                             <VerticalStackLayout>
-                                <skia:SKLottieView IsAnimationEnabled="False"
+                                <skia:SKLottieView IsAnimationEnabled="True" RepeatCount="-1"
                                                    HeightRequest="100" WidthRequest="100"
-                                                   Source="mist.json"  />
-                                <Label Text="Datum" TextColor="Black" FontSize="Small" HorizontalTextAlignment="Center" />
-                                <Label Text="50°C" TextColor="Black" FontSize="Small" HorizontalTextAlignment="Center" />
-                                <Label Text="Misty" TextColor="Black" FontSize="Small" HorizontalTextAlignment="Center" />
+                                                   Source="{Binding weathercode, Converter={StaticResource CodeToLottieConverter}}"  />
+                                <Label Text="{Binding time}" TextColor="Black" FontSize="Small" HorizontalTextAlignment="Center" />
+                                <Label Text="{Binding temperature_2m_max, StringFormat='{0}°C'}" TextColor="Black" FontSize="Small" HorizontalTextAlignment="Center" />
+                                <Label Text="{Binding weathercode, Converter={StaticResource CodeToWeatherConverter}}" TextColor="Black" FontSize="Small" HorizontalTextAlignment="Center" />
                             </VerticalStackLayout>
                         </Frame>
                     </DataTemplate>

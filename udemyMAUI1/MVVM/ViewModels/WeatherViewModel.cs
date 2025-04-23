@@ -10,6 +10,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using udemyMAUI1.MVVM.Models;
+using System.Globalization;
 
 namespace udemyMAUI1.MVVM.ViewModels
 {
@@ -47,8 +48,11 @@ namespace udemyMAUI1.MVVM.ViewModels
 
         private async Task GetWeather(Address location)
         {
+            NumberFormatInfo nfi = new NumberFormatInfo();
+            nfi.NumberDecimalSeparator = ".";
+
             var url =
-                 $"https://api.open-meteo.com/v1/forecast?latitude={location.Coordinates.Latitude}&longitude={location.Coordinates.Longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=America%2FChicago";
+                 $"https://api.open-meteo.com/v1/forecast?latitude={location.Coordinates.Latitude.ToString(nfi)}&longitude={location.Coordinates.Longitude.ToString(nfi)}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=America%2FChicago";
 
             IsLoading = true;
 

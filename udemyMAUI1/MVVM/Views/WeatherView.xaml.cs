@@ -7,7 +7,8 @@ public partial class WeatherView : ContentPage
 	public WeatherView()
 	{
 		InitializeComponent();
-		BindingContext = new WeatherViewModel();
-
+        WeatherViewModel viewModel = new WeatherViewModel();
+        BindingContext = viewModel;
+        viewModel.SearchCommand.Execute("Linz");
     }
 }
