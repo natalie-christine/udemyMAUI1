@@ -22,7 +22,7 @@
 
     <ScrollView>
         <VerticalStackLayout Style="{StaticResource MainStackLayout}" VerticalOptions="Start">
-            <SearchBar Placeholder="Search" VerticalOptions="Center" />
+            <SearchBar x:Name="SearchBar" Placeholder="Search" VerticalOptions="Center" SearchCommand="{Binding SearchCommand}" SearchCommandParameter="{Binding Source={x:Reference SearchBar}, Path=Text}" />
             <Label Text="Paris" FontSize="Header" Style="{StaticResource lblHeader }" />
             <Label Text="Datum, 2015" FontSize="Small" Style="{StaticResource lblHeader }" />
             <skia:SKLottieView RepeatCount="-1" Source="foggy.json" HeightRequest="400" />
