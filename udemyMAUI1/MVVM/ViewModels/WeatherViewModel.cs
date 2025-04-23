@@ -1,4 +1,6 @@
-﻿using PropertyChanged;
+﻿using Geocoding.Google;
+using Geocoding;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -36,14 +38,17 @@ namespace udemyMAUI1.MVVM.ViewModels
                  PlaceName = searchText.ToString();
                  var location =
                         await GetCoordinatesAsync(searchText.ToString());
-                 await GetWeather(location);
+                 if (location != null)
+                 {
+                    await GetWeather(location);
+                 }
              });
 
 
-        private async Task GetWeather(Location location)
+        private async Task GetWeather(Address location)
         {
             var url =
-                 $"https://api.open-meteo.com/v1/forecast?latitude={location.Latitude}&longitude={location.Longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=America%2FChicago";
+                 $"https://api.open-meteo.com/v1/forecast?latitude={location.Coordinates.Latitude}&longitude={location.Coordinates.Longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=America%2FChicago";
 
             IsLoading = true;
 
@@ -75,16 +80,16 @@ namespace udemyMAUI1.MVVM.ViewModels
             IsLoading = false;
         }
 
-        private async Task<Location> GetCoordinatesAsync(string address)
+        private async Task<Address> GetCoordinatesAsync(string address)
         {
-            IEnumerable<Location> locations = await Geocoding
-                 .Default.GetLocationsAsync(address);
+            IGeocoder geocoder = new GoogleGeocoder() { ApiKey = "AIzaSyBhvVBZYkVklE8mqsrVBv2asqcHlqMlt7I" };
+            IEnumerable<Address> locations = await geocoder.GeocodeAsync(address);
 
-            Location location = locations?.FirstOrDefault();
+            Address location = locations?.FirstOrDefault();
 
             if (location != null)
                 Console
-                     .WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+                     .WriteLine($"Latitude: {location.Coordinates.Latitude}, Longitude: {location.Coordinates.Longitude}");
             return location;
         }
 
