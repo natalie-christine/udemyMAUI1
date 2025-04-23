@@ -36,12 +36,13 @@ namespace udemyMAUI1.MVVM.ViewModels
         public ICommand SearchCommand =>
              new Command(async (searchText) =>
              {
-                 PlaceName = searchText.ToString();
                  var location =
                         await GetCoordinatesAsync(searchText.ToString());
+                 PlaceName = "";
                  if (location != null)
                  {
-                    await GetWeather(location);
+                     PlaceName = location.FormattedAddress;
+                     await GetWeather(location);
                  }
              });
 

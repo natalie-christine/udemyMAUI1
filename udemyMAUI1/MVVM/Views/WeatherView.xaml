@@ -27,6 +27,7 @@
     <ScrollView>
         <VerticalStackLayout Style="{StaticResource MainStackLayout}" VerticalOptions="Start">
             <SearchBar x:Name="SearchBar" Placeholder="Search" VerticalOptions="Center" SearchCommand="{Binding SearchCommand}" SearchCommandParameter="{Binding Source={x:Reference SearchBar}, Path=Text}" />
+            <ActivityIndicator IsVisible="{Binding IsLoading}" IsRunning="True" />
             <Label Text="{Binding PlaceName}" FontSize="Header" Style="{StaticResource lblHeader }" />
             <Label IsVisible="{Binding IsVisible}" Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="Small" Style="{StaticResource lblHeader }" />
             <skia:SKLottieView RepeatCount="-1" Source="{Binding WeatherData.current_weather.weathercode, Converter={StaticResource CodeToLottieConverter}}" HeightRequest="400" />
