@@ -120,6 +120,9 @@
 	  <MauiXaml Update="Page1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ProsperDaily.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Tabb1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

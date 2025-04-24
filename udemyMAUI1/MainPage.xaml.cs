@@ -67,6 +67,11 @@ namespace udemyMAUI1
         {
             Navigation.PushAsync(new TaskerPage(new NewTask()));
         }
+
+        private void OnProsperDailyClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ProsperDaily());
+        }
         private void ImageButton_Clicked(object sender, EventArgs e)
         {
             //DisplayAlert("Hallo", "Welt :)", "Schließen");

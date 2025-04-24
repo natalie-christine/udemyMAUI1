@@ -39,40 +39,34 @@
                     <VerticalStackLayout x:Name="buttonContainer" Spacing="20" Padding="0,0,20,0" >
                         <Button
                                 x:Name="CounterBtn"
-                                Grid.Row="0" Grid.Column="0"
                                 Text="Page 1"
                                 Clicked="OnCounterClicked" />
-
                         <Button
                                 x:Name="Page2Button"
-                                Grid.Row="1" Grid.Column="0"
                                 Text="Page 2"
                                 Clicked="OnPage2Clicked" />
                         <Button
-                                Grid.Row="1" Grid.Column="0"
                                 Text="Weather"
                                 Clicked="OnWeatherClicked" />
                         <Button
+                                x:Name="ProsperBtn"
+                                Text="Prosper Daily" 
+                                Clicked="OnProsperDailyClicked" />
+                        <Button
                                 x:Name="TabbedBtn"
-                                Grid.Row="2" Grid.Column="0"
                                 Text="Tabbed" 
                                 Clicked="OnTabbedClicked" />
-
                         <Button
                                 x:Name="FlyoutBtn"
-                                Grid.Row="3" Grid.Column="0"
                                 Text="Flyout"
                                 Clicked="OnFlyoutClicked" />
                         <Button
-                                Grid.Row="3" Grid.Column="0"
                                 Text="MAUIVERTER"
                                 Clicked="OnMauiverterClicked" />
                         <Button
-                                Grid.Row="3" Grid.Column="0"
                                 Text="Tasker"
                                 Clicked="OnTaskerClicked" />
                         <Button
-                                Grid.Row="3" Grid.Column="0"
                                 Text="Supabase"
                                 Clicked="OnSupabaseClicked" />
                     </VerticalStackLayout>
