@@ -6,6 +6,7 @@ using System;
 using udemyMAUI1.MVVM.ViewModels;
 using udemyMAUI1.Helper;
 using SkiaSharp.Views.Maui.Controls.Hosting;
+using Geocoding.Google;
 
 namespace udemyMAUI1
 {
@@ -17,6 +18,7 @@ namespace udemyMAUI1
     {
         public static MauiApp CreateMauiApp()
         {
+            var googleGeocoderApiKey = "AIzaSyBhvVBZYkVklE8mqsrVBv2asqcHlqMlt7I";
             var supabaseUrl = "https://tnnhotmumailhbhlbxir.supabase.co";
             var supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRubmhvdG11bWFpbGhiaGxieGlyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE5ODA2NjgsImV4cCI6MjA1NzU1NjY2OH0.U83KNA4X_vf3Us0AY_ON54gmWU_c4KXbqFP1ae66acs";
             var supabaseOptions = new SupabaseOptions
@@ -61,7 +63,8 @@ namespace udemyMAUI1
                         var vm = new SupabaseViewModel(provider.GetService<Supabase.Client>());
                         vm.Init();
                         return vm;
-                    });
+                    })
+                    .AddSingleton(provider => new GoogleGeocoder() { ApiKey = googleGeocoderApiKey });
 
 #if DEBUG
             builder.Logging.AddDebug();

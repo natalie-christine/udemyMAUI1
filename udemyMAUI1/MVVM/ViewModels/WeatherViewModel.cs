@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using udemyMAUI1.MVVM.Models;
 using System.Globalization;
+using udemyMAUI1.Helper;
 
 namespace udemyMAUI1.MVVM.ViewModels
 {
@@ -87,7 +88,7 @@ namespace udemyMAUI1.MVVM.ViewModels
 
         private async Task<Address> GetCoordinatesAsync(string address)
         {
-            IGeocoder geocoder = new GoogleGeocoder() { ApiKey = "AIzaSyBhvVBZYkVklE8mqsrVBv2asqcHlqMlt7I" };
+            IGeocoder geocoder = ServiceHelper.GetService<GoogleGeocoder>();
             IEnumerable<Address> locations = await geocoder.GeocodeAsync(address);
 
             Address location = locations?.FirstOrDefault();
