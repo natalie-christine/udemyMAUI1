@@ -6,6 +6,8 @@ using udemyMAUI1.MVVM.ViewModels;
 using udemyMAUI1.Helper;
 using SkiaSharp.Views.Maui.Controls.Hosting;
 using Geocoding.Google;
+using udemyMAUI1.Repositories;
+using udemyMAUI1.MVVM.Models;
 
 
 namespace udemyMAUI1
@@ -36,6 +38,9 @@ namespace udemyMAUI1
                 .ConfigureSyncfusionCore()
                 .ConfigureFonts(fonts =>
                 {
+                    fonts.AddFont("Roboto-Black.ttf", "Strong");
+                    fonts.AddFont("LibreFranklin-Regular.ttf", "Regular");
+
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("Cakecafe.ttf", "Cakecafe");
@@ -64,7 +69,8 @@ namespace udemyMAUI1
                         vm.Init();
                         return vm;
                     })
-                    .AddSingleton(provider => new GoogleGeocoder() { ApiKey = googleGeocoderApiKey });
+                    .AddSingleton(provider => new GoogleGeocoder() { ApiKey = googleGeocoderApiKey })
+                    .AddSingleton<BaseRepository<Transaction>>();
 
 #if DEBUG
             builder.Logging.AddDebug();
