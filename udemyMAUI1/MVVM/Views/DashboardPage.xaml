@@ -13,30 +13,33 @@
     </ContentPage.Resources>
 
     <Grid RowDefinitions=".15*,.15*,.15*,.55*">
-        <RoundRectangle Grid.RowSpan="2" StyleClass="TopRectangle" />
-        <VerticalStackLayout StyleClass="Header">
-            <Label StyleClass="HeaderTitle" Text="Good Morning," />
-            <Label StyleClass="HeaderSubTitle" Text="Héctor Pérez" />
+        <RoundRectangle Grid.RowSpan="2" StyleClass="TopRectangle" BackgroundColor="{DynamicResource DynamicPrimaryLight}" />
+        <VerticalStackLayout BackgroundColor="{DynamicResource DynamicPrimaryLight}">
+            <Label StyleClass="HeaderTitle" Text="Good Morning," TextColor="{DynamicResource DynamicPrimaryLight}"/>
+            <Label StyleClass="HeaderSubTitle" Text="Kartoffel Power" />
         </VerticalStackLayout>
 
         <Grid
+            HeightRequest="250"
             Grid.Row="1"
             Grid.RowSpan="2"
             StyleClass="BalanceGrid">
 
             <RoundRectangle StyleClass="BalanceRectangle" />
 
-            <Grid
+            <Grid 
                 ColumnDefinitions="*,*"
                 RowDefinitions=".333*,.333*,.333*"
                 StyleClass="Padding25">
                 <VerticalStackLayout>
                     <Label Text="Total Balance" />
-                    <Label StyleClass="StrongTitle" Text="{Binding Balance, StringFormat='{0:C}'}" />
+                    <Label StyleClass="StrongTitle" Text="{Binding Balance, StringFormat='{0:C}'}"
+                           TextColor="black"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout Grid.Row="2">
                     <Label Text="Income" />
-                    <Label StyleClass="StrongSubTitle" Text="{Binding Income, StringFormat='{0:C}'}" />
+                    <Label StyleClass="StrongSubTitle" Text="{Binding Income, StringFormat='{0:C}'}"
+                           TextColor="Black"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout
                     Grid.Row="2"
@@ -53,7 +56,9 @@
             Grid.Row="2"
             Clicked="AddTransaction_Clicked"
             StyleClass="CircularButton"
-            Text="+" />
+            Text="+" 
+            TextColor="{AppThemeBinding Dark=White}"
+           />
 
         <Grid
             Grid.Row="3"
@@ -78,11 +83,12 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
-                            <Label StyleClass="StrongMediumTitle" Text="{Binding Name}" />
+                            <Label StyleClass="StrongMediumTitle" Text="{Binding Name}" TextColor="{AppThemeBinding Dark=White, Light=Black}" />
                             <Label
                                 Grid.Row="1"
                                 StyleClass="SmallFont"
-                                Text="{Binding HumanDate}" />
+                                Text="{Binding HumanDate}" 
+                                />
 
                             <Label
                                 x:Name="lblIsIncome"

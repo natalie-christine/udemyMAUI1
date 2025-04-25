@@ -14,7 +14,7 @@
     <Style Class="TopRectangle" TargetType="RoundRectangle">
         <Setter Property="Margin" Value="-5" />
         <Setter Property="CornerRadius" Value="0,0,25,25" />
-        <Setter Property="Fill" Value="{StaticResource MainColor}" />
+        <Setter Property="Fill" Value="{DynamicResource DynamicPrimaryLight}" />
     </Style>
 
     <Style Class="Header" TargetType="VerticalStackLayout">
@@ -121,7 +121,8 @@
         <Setter Property="Margin" Value="0,0,0,-35" />
         <Setter Property="VerticalOptions" Value="End" />
         <Setter Property="HorizontalOptions" Value="End" />
-        <Setter Property="BackgroundColor" Value="{StaticResource MainColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource DynamicPrimaryDark}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
         <Setter Property="Clip" Value="{StaticResource circle}" />
     </Style>
 
