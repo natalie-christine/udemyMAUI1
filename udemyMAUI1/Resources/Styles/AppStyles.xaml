@@ -5,6 +5,7 @@
 
     <Color x:Key="MainColor">#301551</Color>
     <Color x:Key="SecondaryColor">#9742ff</Color>
+    <Color x:Key="DynamicPrimaryDark">#000000</Color>
 
     <Style TargetType="Grid">
         <Setter Property="ColumnSpacing" Value="0" />
@@ -41,7 +42,7 @@
 
     <Shadow
         x:Key="shadow"
-        Brush="{StaticResource SecondaryColor}"
+        Brush="{DynamicResource DynamicPrimaryDark}"
         Opacity="0.6"
         Radius="15"
         Offset="0,15" />
@@ -50,7 +51,8 @@
         <Setter Property="CornerRadius" Value="10" />
         <Setter Property="Fill" Value="{StaticResource White}" />
         <Setter Property="StrokeThickness" Value="2" />
-        <Setter Property="Shadow" Value="{StaticResource shadow}" />
+        <Setter Property="Shadow" Value="{DynamicResource DynamicPrimaryDark}"      
+                />
     </Style>
 
     <Style
@@ -69,7 +71,7 @@
     <Style Class="FrameBorder" TargetType="Frame">
         <Setter Property="HeightRequest" Value="50" />
         <Setter Property="Padding" Value="10,5" />
-        <Setter Property="BorderColor" Value="{StaticResource SecondaryColor}" />
+        <Setter Property="BorderColor" Value="{DynamicResource DynamicPrimaryDark}" />
     </Style>
 
     <Style

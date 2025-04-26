@@ -15,8 +15,8 @@
     <Grid RowDefinitions=".15*,.15*,.15*,.55*">
         <RoundRectangle Grid.RowSpan="2" StyleClass="TopRectangle" BackgroundColor="{DynamicResource DynamicPrimaryLight}" />
         <VerticalStackLayout BackgroundColor="{DynamicResource DynamicPrimaryLight}">
-            <Label StyleClass="HeaderTitle" Text="Good Morning," TextColor="{DynamicResource DynamicPrimaryLight}"/>
-            <Label StyleClass="HeaderSubTitle" Text="Kartoffel Power" />
+            <Label StyleClass="HeaderTitle" Padding="30,0,0,0" Text="Good Morning," TextColor="{DynamicResource DynamicPrimaryText}"/>
+            <Label StyleClass="HeaderSubTitle" Padding="30,0,0,0" Text="Kartoffel Power" />
         </VerticalStackLayout>
 
         <Grid
@@ -63,7 +63,8 @@
         <Grid
             Grid.Row="3"
             RowDefinitions=".1*,.9*"
-            StyleClass="Margin15">
+            StyleClass="Margin15" Padding="0,30,0,0">
+
             <Label Text="Transactions" />
             <CollectionView
                 Grid.Row="1"
