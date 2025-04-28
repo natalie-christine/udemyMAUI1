@@ -115,6 +115,17 @@
 
             <DatePicker />
             <Switch IsToggled="True" />
+            <Frame Grid.Column="0" Grid.Row="1">
+                <VerticalStackLayout>
+                    <Image Source="potion_green.png" Rotation="{Binding Source= {x:Reference slider1}, Path=Value}" HeightRequest="50" Margin="50">
+
+                    </Image>
+                    <Slider WidthRequest="200"
+                    Minimum="0"
+                    Maximum="360"
+                    x:Name="slider1"/>
+                </VerticalStackLayout>
+            </Frame>
 
             <Image WidthRequest="30">
                 <Image.Source>

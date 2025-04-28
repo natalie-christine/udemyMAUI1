@@ -13,14 +13,14 @@
     </ContentPage.Resources>
 
     <Grid RowDefinitions="80,200,100,*">
-        <RoundRectangle Grid.RowSpan="2" StyleClass="TopRectangle" BackgroundColor="{DynamicResource DynamicPrimaryLight}" />
+        <RoundRectangle Grid.RowSpan="2" MinimumHeightRequest="100" StyleClass="TopRectangle" BackgroundColor="{DynamicResource DynamicPrimaryLight}" />
         <VerticalStackLayout BackgroundColor="{DynamicResource DynamicPrimaryLight}">
             <Label StyleClass="HeaderTitle" Padding="30,0,0,0" Text="Good Morning," TextColor="{DynamicResource DynamicPrimaryText}"/>
             <Label StyleClass="HeaderSubTitle" Padding="30,0,0,0" Text="Kartoffel Power" />
         </VerticalStackLayout>
 
         <Grid
-            HeightRequest="250"
+            HeightRequest="230"
             Grid.Row="1"
             Grid.RowSpan="2"
             StyleClass="BalanceGrid">
@@ -31,7 +31,7 @@
                 ColumnDefinitions="*,*"
                 RowDefinitions=".333*,.333*,.333*"
                 StyleClass="Padding25">
-                <VerticalStackLayout>
+                <VerticalStackLayout Grid.ColumnSpan="2">
                     <Label Text="Total Balance" />
                     <Label StyleClass="StrongTitle" Text="{Binding Balance, StringFormat='{0:C}'}"
                            TextColor="black"/>
@@ -62,7 +62,7 @@
         <Grid
             Grid.Row="3"
             RowDefinitions=".1*,.9*"
-            StyleClass="Margin15" Padding="0,30,0,0">
+            StyleClass="Margin15" Padding="0,20,0,0">
 
             <Label StyleClass="StrongTitle" Text="Transactions" />
             <CollectionView
