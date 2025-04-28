@@ -42,7 +42,7 @@
 
     <Shadow
         x:Key="shadow"
-        Brush="{DynamicResource DynamicPrimaryDark}"
+        Brush="{DynamicResource DynamicPrimaryBrush}"
         Opacity="0.6"
         Radius="15"
         Offset="0,15" />
@@ -51,7 +51,7 @@
         <Setter Property="CornerRadius" Value="10" />
         <Setter Property="Fill" Value="{StaticResource White}" />
         <Setter Property="StrokeThickness" Value="2" />
-        <Setter Property="Shadow" Value="{DynamicResource DynamicPrimaryDark}"      
+        <Setter Property="Shadow" Value="{StaticResource shadow}"      
                 />
     </Style>
 
