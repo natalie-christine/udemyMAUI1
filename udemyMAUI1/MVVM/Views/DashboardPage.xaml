@@ -12,7 +12,7 @@
         <converters:AmountToColorConverter x:Key="ColorConverter" />
     </ContentPage.Resources>
 
-    <Grid RowDefinitions=".15*,.15*,.15*,.55*">
+    <Grid RowDefinitions="80,200,100,*">
         <RoundRectangle Grid.RowSpan="2" StyleClass="TopRectangle" BackgroundColor="{DynamicResource DynamicPrimaryLight}" />
         <VerticalStackLayout BackgroundColor="{DynamicResource DynamicPrimaryLight}">
             <Label StyleClass="HeaderTitle" Padding="30,0,0,0" Text="Good Morning," TextColor="{DynamicResource DynamicPrimaryText}"/>
@@ -56,8 +56,7 @@
             Grid.Row="2"
             Clicked="AddTransaction_Clicked"
             StyleClass="CircularButton"
-            Text="+" 
-            TextColor="{AppThemeBinding Dark=White}"
+            Text="+"
            />
 
         <Grid
@@ -65,7 +64,7 @@
             RowDefinitions=".1*,.9*"
             StyleClass="Margin15" Padding="0,30,0,0">
 
-            <Label Text="Transactions" />
+            <Label StyleClass="StrongTitle" Text="Transactions" />
             <CollectionView
                 Grid.Row="1"
                 EmptyView="No Data"

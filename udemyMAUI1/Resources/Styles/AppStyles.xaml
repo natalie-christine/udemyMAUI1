@@ -84,7 +84,7 @@
     <Style Class="StrongTitle" TargetType="Label">
         <Setter Property="FontFamily" Value="Strong" />
         <Setter Property="FontSize" Value="Large" />
-        <Setter Property="TextColor" Value="{StaticResource Black}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
     </Style>
     <Style Class="StrongMediumTitle" TargetType="Label">
         <Setter Property="FontFamily" Value="Strong" />
@@ -101,6 +101,7 @@
     <Style Class="SmallFont" TargetType="Label">
         <Setter Property="FontFamily" Value="Regular" />
         <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
     </Style>
 
     <Style Class="ListAmount" TargetType="Label">
@@ -124,7 +125,7 @@
         <Setter Property="VerticalOptions" Value="End" />
         <Setter Property="HorizontalOptions" Value="End" />
         <Setter Property="BackgroundColor" Value="{DynamicResource DynamicPrimaryDark}" />
-        <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
+        <Setter Property="TextColor" Value="{StaticResource White}" />
         <Setter Property="Clip" Value="{StaticResource circle}" />
     </Style>
 

@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
     xmlns:converters="clr-namespace:udemyMAUI1.Converter"
-    Title="StatisticsPage">
+    Title="StatisticsPage"
+    NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
         <converters:AmountToCurrencyConverter x:Key="AmountConverter" />
@@ -47,7 +48,7 @@
             Grid.Row="3"
             RowDefinitions=".1*,.9*"
             StyleClass="Margin15">
-            <Label Text="Top Spending" />
+            <Label StyleClass="StrongTitle" Text="Top Spending" />
             <CollectionView
                 Grid.Row="1"
                 EmptyView="No Data"
@@ -66,7 +67,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
-                            <Label StyleClass="StrongMediumTitle" Text="{Binding Name}" />
+                            <Label StyleClass="StrongMediumTitle" Text="{Binding Name}" TextColor="{AppThemeBinding Dark=White, Light=Black}" />
                             <Label
                                 Grid.Row="1"
                                 StyleClass="SmallFont"
