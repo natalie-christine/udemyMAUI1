@@ -10,7 +10,6 @@ namespace udemyMAUI1
     public partial class Page2 : ContentPage, INotifyPropertyChanged
     {
 
-
         public Page2()
         {
             InitializeComponent();
