@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="udemyMAUI1.FlyoutPage1"
              Title="FlyoutPage1"
              FlyoutLayoutBehavior="Popover"
              >
 
+    <FlyoutPage.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="PenguinGlyph">&#xe842;</x:String>
+            <x:String x:Key="NoPenguinGlyph">&#xf135;</x:String>
+
+            <toolkit:BoolToObjectConverter x:Key="PenguinConverter" 
+                                           TrueObject="{StaticResource NoPenguinGlyph}"
+                                           FalseObject="{StaticResource PenguinGlyph}" />
+        </ResourceDictionary>
+    </FlyoutPage.Resources>
+
     <NavigationPage.TitleView>
-        <HorizontalStackLayout WidthRequest="{Binding Source={RelativeSource Self }, Path=Window.Width}">
-            <ImageButton Clicked="Burger_Clicked_1">
+        <HorizontalStackLayout>
+            <ImageButton Clicked="Burger_Clicked_1" WidthRequest="80">
                 <ImageButton.Source>
                     <FontImageSource x:Name="BurgerIcon" Color="{AppThemeBinding Dark=White, Light=Black}"
                         FontFamily="Icons"
-                        Glyph="&#xe842;"
+                        Glyph="{Binding Source={RelativeSource AncestorType={x:Type FlyoutPage}}, Path=IsPresented, Converter={StaticResource PenguinConverter}}"
                         Size="46"/>
                 </ImageButton.Source>
             </ImageButton>
