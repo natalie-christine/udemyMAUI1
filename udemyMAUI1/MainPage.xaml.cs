@@ -127,8 +127,8 @@ namespace udemyMAUI1
                 Application.Current.Resources[p + "Light"] = c.WithLuminosity(c.GetLuminosity() + 0.2f).ToHex();
                 Application.Current.Resources[p + "Dark"] = c.WithLuminosity(c.GetLuminosity() - 0.2f).ToHex();
                 Application.Current.Resources[p + "Text"] = c.GetLuminosity() > 0.5 ?
-                        c.WithLuminosity(0.1f).ToHex() :
-                        c.WithLuminosity(0.9f).ToHex();
+                        c.WithLuminosity(0f).ToHex() :
+                        c.WithLuminosity(1f).ToHex();
 
                 Application.Current.Resources[p + "Brush"] = new SolidColorBrush(c);
             }

@@ -67,4 +67,18 @@ public partial class FlyoutPage1 : FlyoutPage
         lblNoPersons.Text = noPersons.ToString();
         CalculateTotal();
     }
+
+    private void Burger_Clicked_1(object sender, EventArgs e)
+    {
+        if (IsPresented)
+		{
+			BurgerIcon.Glyph = "\uf135";
+        }
+		else
+		{
+            BurgerIcon.Glyph = "\ue842";
+        }
+        IsPresented = false;
+        IsPresented = true;
+    }
 }

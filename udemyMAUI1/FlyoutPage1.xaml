@@ -3,19 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="udemyMAUI1.FlyoutPage1"
              Title="FlyoutPage1"
-                FlyoutLayoutBehavior="Split">
+             FlyoutLayoutBehavior="Popover"
+             >
 
-    <FlyoutPage.Resources>
-        <Color x:Key="SectionColor">#444444</Color>
-        <Color x:Key="LightFont">#d6d6d6</Color>
-        <Color x:Key="DarkFont">#4fd8eb</Color>
-    </FlyoutPage.Resources>
+    <NavigationPage.TitleView>
+        <HorizontalStackLayout WidthRequest="{Binding Source={RelativeSource Self }, Path=Window.Width}">
+            <ImageButton Clicked="Burger_Clicked_1">
+                <ImageButton.Source>
+                    <FontImageSource x:Name="BurgerIcon" Color="{AppThemeBinding Dark=White, Light=Black}"
+                        FontFamily="Icons"
+                        Glyph="&#xe842;"
+                        Size="46"/>
+                </ImageButton.Source>
+            </ImageButton>
+            <Label VerticalOptions="Center" Text="Weitere Punkte" FontSize="Large" TextColor="{AppThemeBinding Dark=White, Light=Black}" />
+        </HorizontalStackLayout>
+    </NavigationPage.TitleView>
 
     <FlyoutPage.Flyout>
         <ContentPage Title="Menu"
                      Padding="0">
             <Label Text="Juuhhhhuuuuuuuuuu!"
-                   BackgroundColor="#8ED1E3"
+                   BackgroundColor="{DynamicResource DynamicPrimaryDark}"
                    HorizontalTextAlignment="Start"
                    VerticalTextAlignment="End"
                    Padding="10"
@@ -25,7 +34,7 @@
 
     <FlyoutPage.Detail>
 
-        <ContentPage Title="Page 1" BackgroundColor="#323232">
+        <ContentPage Title="Page 1">
             <ScrollView>
 
                 <Grid Margin="15" HeightRequest="600">
@@ -33,7 +42,7 @@
                         <RowDefinition Height=".4*" />
                         <RowDefinition Height=".6*" />
                     </Grid.RowDefinitions>
-                    <Frame Padding="10" BackgroundColor="{StaticResource SectionColor}" BorderColor="Transparent">
+                    <Frame Padding="10" BackgroundColor="{DynamicResource DynamicPrimaryLight}" BorderColor="Transparent">
                         <Grid Margin="15">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
@@ -44,23 +53,23 @@
                                 <RowDefinition Height=".2*" />
                                 <RowDefinition Height=".8*" />
                             </Grid.RowDefinitions>
-                            <Label Grid.ColumnSpan="3" FontAttributes="Bold" HorizontalTextAlignment="Center"
-                               Text="Total P/Person" TextColor="{StaticResource DarkFont}" FontSize="Large" />
+                            <Label FontAttributes="Bold" HorizontalTextAlignment="Center"
+                               Text="Total P/Person" TextColor="{DynamicResource DynamicPrimaryText}" FontSize="Large" />
                             <Label x:Name="lblTotal" Grid.Row="1" FontAttributes="Bold" FontSize="35"
-                               HorizontalTextAlignment="Center" Text="$0.00" TextColor="{ StaticResource LightFont }"
+                               HorizontalTextAlignment="Center" Text="$0.00" TextColor="{DynamicResource DynamicPrimaryText}"
                                VerticalOptions="CenterAndExpand" />
                             <BoxView Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" VerticalOptions="Center"
-                                 Color="#adadad" HeightRequest="100" />
+                                 Color="{DynamicResource DynamicPrimaryText}" HeightRequest="100" />
                             <VerticalStackLayout
                                 Grid.Row="1"
                                 Grid.Column="2"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center">
-                                <Label Text="Subtotal" TextColor="{StaticResource LightFont}" FontSize="20" />
-                                <Label x:Name="lblSubtotal" FontAttributes="Bold" Text="$0.00" FontSize="20" TextColor="{StaticResource LightFont}" />
+                                <Label Text="Subtotal" TextColor="{DynamicResource DynamicPrimaryText}" FontSize="20" />
+                                <Label x:Name="lblSubtotal" FontAttributes="Bold" Text="$0.00" FontSize="20" TextColor="{DynamicResource DynamicPrimaryText}" />
 
-                                <Label Margin="0,10,0,0" Text="Tip" TextColor="{StaticResource LightFont}" FontSize="20" />
-                                <Label x:Name="lblTipByPerson" FontAttributes="Bold" Text="$0.00" FontSize="20" TextColor="{StaticResource LightFont}" />
+                                <Label Margin="0,10,0,0" Text="Tip" TextColor="{DynamicResource DynamicPrimaryText}" FontSize="20" />
+                                <Label x:Name="lblTipByPerson" FontAttributes="Bold" Text="$0.00" FontSize="20" TextColor="{DynamicResource DynamicPrimaryText}" />
                             </VerticalStackLayout>
                         </Grid>
                     </Frame>
@@ -79,18 +88,17 @@
                         </Grid.RowDefinitions>
 
                         <Label Text="Enter your bill: "
-                           TextColor="{StaticResource LightFont}"
+                           TextColor="{AppThemeBinding Dark=White, Light=Black}"
                            VerticalOptions="Center" />
 
                         <Entry x:Name="txtBill"
                                Grid.Column="1"
-                               BackgroundColor="{StaticResource SectionColor}"
                                Keyboard="Numeric"
-                               TextColor="{StaticResource LightFont}"
+                               TextColor="{AppThemeBinding Dark=White, Light=Black}"
                                VerticalOptions="Center"
                                Completed="txtBill_Completed"/>
                         <Label Text="Choose your tip:"
-                           TextColor="{StaticResource LightFont}"
+                           TextColor="{AppThemeBinding Dark=White, Light=Black}"
                            Grid.Row="1"
                            VerticalOptions="Center" />
                         <HorizontalStackLayout
@@ -107,7 +115,7 @@
                         <Label x:Name="lblTip"
                                Grid.Row="2"
                                Text="Tip: 0%"
-                               TextColor="{StaticResource LightFont}"
+                               TextColor="{AppThemeBinding Dark=White, Light=Black}"
                                VerticalOptions="Center" />
                         <Slider
                             VerticalOptions="Center"
@@ -119,7 +127,7 @@
                             ValueChanged="sldTip_ValueChanged" />
 
                         <Label Grid.Row="3" Text="Split the total"
-                               TextColor="{StaticResource LightFont}"
+                               TextColor="{AppThemeBinding Dark=White, Light=Black}"
                                VerticalOptions="Center" />
 
                         <HorizontalStackLayout
@@ -133,12 +141,12 @@
                                     Clicked="btnMinus_Clicked" />
                             <Label x:Name="lblNoPersons"
                                    Margin="-5,0,-5,0"
-                                   BackgroundColor="{StaticResource SectionColor}"
+                                   
                                    FontSize="25"
                                    HeightRequest="50"
                                    HorizontalTextAlignment="Center"
                                    Text="1"
-                                   TextColor="{StaticResource LightFont}"
+                                   TextColor="{AppThemeBinding Dark=White, Light=Black}"
                                    VerticalOptions="Center"
                                    VerticalTextAlignment="Center"
                                    WidthRequest="100" />
