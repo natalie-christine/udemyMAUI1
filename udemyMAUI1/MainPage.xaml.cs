@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using CommunityToolkit.Maui.Alerts;
+using Microsoft.Maui.Controls;
 using udemyMAUI1.MVVM.Views;
 
 namespace udemyMAUI1
@@ -22,10 +23,12 @@ namespace udemyMAUI1
             if (width > 700)
             {
                 HeaderContainer.Orientation = StackOrientation.Horizontal;
+                Templateview.Orientation = StackOrientation.Horizontal;
             }
             else
             {
                 HeaderContainer.Orientation = StackOrientation.Vertical;
+                Templateview.Orientation = StackOrientation.Vertical;
             }
         }
 

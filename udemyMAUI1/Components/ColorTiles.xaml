@@ -17,46 +17,43 @@
         </Style>
     </ContentView.Resources>
 
-    <HorizontalStackLayout HeightRequest="60">
-        <Grid RowDefinitions=".5*,.5*" ColumnDefinitions=".5*,.5*" WidthRequest="60">
+    <HorizontalStackLayout HeightRequest="70">
+        <Grid RowDefinitions=".5*,.5*" ColumnDefinitions="*,*,*,*,*,*" WidthRequest="300" RowSpacing="10">
             <Frame BackgroundColor="{DynamicResource DynamicPrimary}">
                 <Label TextColor="{DynamicResource DynamicPrimaryText}" />
             </Frame>
-            <Frame Grid.Column="1" Grid.Row="1" BackgroundColor="{DynamicResource DynamicSecondary}">
+            <Frame Grid.Column="1" Grid.Row="0" BackgroundColor="{DynamicResource DynamicSecondary}">
                 <Label TextColor="{DynamicResource DynamicSecondaryText}" />
             </Frame>
-            <Frame Grid.Column="1" BackgroundColor="{DynamicResource DynamicTertiary}">
+            <Frame Grid.Column="2" BackgroundColor="{DynamicResource DynamicTertiary}">
                 <Label TextColor="{DynamicResource DynamicTertiaryText}" />
             </Frame>
-            <Frame Grid.Row="1" BackgroundColor="{DynamicResource DynamicQuartary}">
+            <Frame Grid.Column="3" Grid.Row="0" BackgroundColor="{DynamicResource DynamicQuartary}">
                 <Label TextColor="{DynamicResource DynamicQuartaryText}" />
             </Frame>
-        </Grid>
-        <Grid RowDefinitions=".5*,.5*" ColumnDefinitions=".5*,.5*" WidthRequest="60">
-            <Frame BackgroundColor="{DynamicResource DynamicPrimaryLight}">
+
+            <Frame Grid.Column="4" Grid.Row="0" BackgroundColor="{DynamicResource DynamicPrimaryLight}">
                 <Label TextColor="{DynamicResource DynamicPrimaryText}" />
             </Frame>
-            <Frame Grid.Column="1" Grid.Row="1" BackgroundColor="{DynamicResource DynamicSecondaryLight}">
+            <Frame Grid.Column="5" Grid.Row="0" BackgroundColor="{DynamicResource DynamicSecondaryLight}">
                 <Label TextColor="{DynamicResource DynamicSecondaryText}" />
             </Frame>
-            <Frame Grid.Column="1" BackgroundColor="{DynamicResource DynamicTertiaryLight}">
+            <Frame Grid.Column="0" Grid.Row="1"  BackgroundColor="{DynamicResource DynamicTertiaryLight}">
                 <Label TextColor="{DynamicResource DynamicTertiaryText}" />
             </Frame>
-            <Frame Grid.Row="1" BackgroundColor="{DynamicResource DynamicQuartaryLight}">
+            <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="{DynamicResource DynamicQuartaryLight}">
                 <Label TextColor="{DynamicResource DynamicQuartaryText}" />
             </Frame>
-        </Grid>
-        <Grid RowDefinitions=".5*,.5*" ColumnDefinitions=".5*,.5*" WidthRequest="60">
-            <Frame BackgroundColor="{DynamicResource DynamicPrimaryDark}">
+            <Frame Grid.Row="1" Grid.Column="2" BackgroundColor="{DynamicResource DynamicPrimaryDark}">
                 <Label TextColor="{DynamicResource DynamicPrimaryText}" />
             </Frame>
-            <Frame Grid.Column="1" Grid.Row="1" BackgroundColor="{DynamicResource DynamicSecondaryDark}">
+            <Frame Grid.Column="3" Grid.Row="1" BackgroundColor="{DynamicResource DynamicSecondaryDark}">
                 <Label TextColor="{DynamicResource DynamicSecondaryText}" />
             </Frame>
-            <Frame Grid.Column="1" BackgroundColor="{DynamicResource DynamicTertiaryDark}">
+            <Frame Grid.Column="4" Grid.Row="1" BackgroundColor="{DynamicResource DynamicTertiaryDark}">
                 <Label TextColor="{DynamicResource DynamicTertiaryText}" />
             </Frame>
-            <Frame Grid.Row="1" BackgroundColor="{DynamicResource DynamicQuartaryDark}">
+            <Frame Grid.Row="1" Grid.Column="5" BackgroundColor="{DynamicResource DynamicQuartaryDark}">
                 <Label TextColor="{DynamicResource DynamicQuartaryText}" />
             </Frame>
         </Grid>

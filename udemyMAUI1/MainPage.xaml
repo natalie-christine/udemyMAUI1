@@ -15,9 +15,9 @@
 
     <ScrollView>
         <VerticalStackLayout
-            Padding="30,0"
+            Padding="30,30,30,30"
             Spacing="25">
-            <StackLayout x:Name="HeaderContainer" HorizontalOptions="CenterAndExpand">
+            <StackLayout x:Name="HeaderContainer">
                 <ImageButton
                     VerticalOptions="Center"
                     Source="dotnet_bot.png"
@@ -85,22 +85,25 @@
                 </Frame>
             </complib:ResponsiveLayout>
 
-            <Frame MinimumHeightRequest="250">
-                <Grid RowDefinitions="100,100" ColumnDefinitions=".3*,.5*">
-                   
-                        <HorizontalStackLayout Grid.Row="0" Grid.Column="1">
-                            <Label Text="Random Color" HorizontalTextAlignment="End" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
+            <Frame MinimumHeightRequest="250" >
+
+                <StackLayout x:Name="Templateview">
+
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="Random Color" HorizontalTextAlignment="End" VerticalOptions="Center"  FontSize="Medium" TextColor="{DynamicResource DynamicPrimaryText}" />
                             <ImageButton
-                                    Margin="20,0,60,20"
-                                    HeightRequest="25"
-                                    Source="potion_violet.png"
-                                    VerticalOptions="Center"
-                                    WidthRequest="25" 
-                                Clicked="btnRandom_Clicked"/>
+                                Margin="20,0,60,20"
+                                HeightRequest="25"
+                                Source="potion_violet.png"
+                                VerticalOptions="Center"
+                                WidthRequest="25" 
+                                Clicked="btnRandom_Clicked"
+                                         />
                         </HorizontalStackLayout>
-                    <HorizontalStackLayout Grid.Row="1" Grid.Column="1">
-                            <Label Text="HEX Value:" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
-                            <Label x:Name="lblHex" Text="#000000" HorizontalTextAlignment="End" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
+                        <HorizontalStackLayout>
+                            <Label Text="HEX Value:" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" FontSize="Medium" />
+                            <Label x:Name="lblHex" Text="#000000"  FontSize="Medium" HorizontalTextAlignment="End" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
                             <ImageButton
                                 Margin="20,0,0,0"
                                 HeightRequest="25"
@@ -109,24 +112,24 @@
                                 WidthRequest="25" 
                                 Clicked="ImageButton_Clicked_1"/>
                         </HorizontalStackLayout>
-
-
-                    <ContentView  Grid.Row="0" Grid.Column="0">
-                        <Frame BackgroundColor="White" Padding="20" WidthRequest="220">
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <ContentView Padding="0,10,0,10" >
+                            <Frame BackgroundColor="Black" Padding="20" WidthRequest="250" >
                                 <comp:ColorTiles />
                             </Frame>
                         </ContentView>
-                    <ContentView Grid.Row="1" Grid.Column="0" >
-                            <Frame BackgroundColor="Black" Padding="20" WidthRequest="220" >
+                        <ContentView x:Name="colorTemplate" >
+                            <Frame BackgroundColor="White" Padding="20" WidthRequest="250" >
                                 <comp:ColorTiles />
                             </Frame>
                         </ContentView>
-                 
-                </Grid>
+
+                    </VerticalStackLayout>
+                </StackLayout>
             </Frame>
-
-
         </VerticalStackLayout>
+
     </ScrollView>
 
 </ContentPage>
