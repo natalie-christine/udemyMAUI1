@@ -19,7 +19,7 @@
                 <Frame>
                     <VerticalStackLayout>
                     <Label FontSize="Large" HorizontalOptions="Center" Text="Height (cm)" TextColor="{DynamicResource DynamicPrimaryText}" />
-                        <gauge:SfLinearGauge Margin="0,15,0,0" Interval="10" Maximum="210" Minimum="100" BackgroundColor="Transparent">
+                        <gauge:SfLinearGauge x:Name="GaugeScala" Margin="0,15,0,0" Interval="10" Maximum="210" Minimum="100" BackgroundColor="Transparent" >
                             <gauge:SfLinearGauge.LabelStyle>
                             <gauge:GaugeLabelStyle TextColor="{DynamicResource DynamicPrimaryText}" />
                             </gauge:SfLinearGauge.LabelStyle>

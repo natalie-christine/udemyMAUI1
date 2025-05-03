@@ -21,10 +21,10 @@
     </NavigationPage.TitleView>
 
     <VerticalStackLayout>
-        <Grid Margin="20" ColumnDefinitions=".3*,.6*,*" RowDefinitions="*" RowSpacing="20" ColumnSpacing="10">
-            <Button Text="Change text color" Grid.Row="0" Grid.Column="0" BackgroundColor="{DynamicResource DynamicPrimaryLight}" HeightRequest="80" x:Name="btnChangeTextColor" Clicked="btnChangeTextColor_Clicked" />
-            <Button Text="Get new quote" Grid.Row="0" Grid.Column="1" BackgroundColor="{DynamicResource DynamicPrimary}" x:Name ="btnGenerateQuote" Clicked="btnGenerateQuotes_Clicked" />
-            <Button Text="Get new backround" Grid.Row="0" Grid.Column="2" BackgroundColor="{DynamicResource DynamicPrimaryDark}" x:Name ="btnGenerateColor" Clicked="btnGenerateColor_Clicked"/>
+        <Grid Margin="20" ColumnDefinitions="*,*,*" RowDefinitions="*" RowSpacing="20" ColumnSpacing="10">
+            <Button LineBreakMode="WordWrap" Text="Change text color" Grid.Row="0" Grid.Column="0" BackgroundColor="{DynamicResource DynamicPrimaryLight}" x:Name="btnChangeTextColor" Clicked="btnChangeTextColor_Clicked" />
+            <Button LineBreakMode="WordWrap" Text="Get new quote" Grid.Row="0" Grid.Column="1" BackgroundColor="{DynamicResource DynamicPrimary}" x:Name ="btnGenerateQuote" Clicked="btnGenerateQuotes_Clicked" />
+            <Button LineBreakMode="WordWrap" Text="Get new backround" Grid.Row="0" Grid.Column="2" BackgroundColor="{DynamicResource DynamicPrimaryDark}" x:Name ="btnGenerateColor" Clicked="btnGenerateColor_Clicked"/>
         </Grid>
 
         <Frame x:Name="background" Margin="20,0,20,0" HeightRequest="200" Opacity=".8">

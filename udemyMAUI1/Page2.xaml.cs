@@ -15,6 +15,26 @@ namespace udemyMAUI1
             InitializeComponent();
             BMIPart.BindingContext = new BMIViewModel();
         }
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+            // Adjust the interval based on the width of the screen
+            if (width < 500)
+            {
+                GaugeScala.Interval = 20;
+            }
+            else
+            {
+                GaugeScala.Interval = 10;
+            }
+        }
+
+
     }
+
+
+
+   
 
 }
