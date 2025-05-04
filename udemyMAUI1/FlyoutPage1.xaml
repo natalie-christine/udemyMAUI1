@@ -34,13 +34,22 @@
 
     <FlyoutPage.Flyout>
         <ContentPage Title="Menu"
-                     Padding="0">
-            <Label Text="Juuhhhhuuuuuuuuuu!"
-                   BackgroundColor="{DynamicResource DynamicPrimaryDark}"
-                   HorizontalTextAlignment="Start"
-                   VerticalTextAlignment="End"
-                   Padding="10"
-                   />
+                     Padding="0"
+                     BackgroundColor="{DynamicResource DynamicPrimaryDark}">
+            <VerticalStackLayout Spacing="20" Padding="10">
+                <HorizontalStackLayout>
+                    <Image Source="candy_1.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                    <Label Padding="0 0 0 10" Text="Candy 1" FontSize="Medium" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Image Source="candy_2.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                    <Label Padding="0 0 0 10" Text="Candy 2" FontSize="Medium" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Image Source="candy_3.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                    <Label Padding="0 0 0 10" Text="Candy 3" FontSize="Medium" VerticalOptions="Center" TextColor="{DynamicResource DynamicPrimaryText}" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>
 
