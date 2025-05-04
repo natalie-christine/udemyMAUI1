@@ -6,37 +6,42 @@
     Title="TransactionsPage"
     NavigationPage.HasNavigationBar="False">
 
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+        <GradientStop Offset="0.0" Color="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+        <GradientStop Offset="1.0" Color="{DynamicResource DynamicPrimaryLight}" />
+    </LinearGradientBrush>
+    </ContentPage.Background>
+    
     <Grid RowDefinitions=".15*,.15*,.70*">
         <RoundRectangle Grid.RowSpan="2" StyleClass="TopRectangle" />
         <VerticalStackLayout StyleClass="Header">
-            <Label StyleClass="HeaderSubTitle" Text="Add Transaction" />
+            <Label  StyleClass="HeaderSubTitle" Text="Add Transaction" BackgroundColor="Transparent" TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
         </VerticalStackLayout>
 
         <Grid
             Grid.Row="1"
             Grid.RowSpan="2"
             StyleClass="BalanceGrid">
-            <RoundRectangle StyleClass="BalanceRectangle" />
-
-            <VerticalStackLayout Spacing="10" StyleClass="Padding25">
-                <Label Text="Transaction Name" />
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Transaction Name" TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
                 <Frame StyleClass="FrameBorder">
-                    <Entry Text="{Binding Transaction.Name}" />
+                    <Entry Text="{Binding Transaction.Name}" BackgroundColor="Transparent" />
                 </Frame>
-                <Label StyleClass="MarginT15" Text="Amount" />
+                <Label TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="Amount" />
                 <Frame StyleClass="FrameBorder">
                     <Entry
                         Keyboard="Numeric"
                         Text="{Binding Transaction.Amount}"
                         VerticalOptions="Center" />
                 </Frame>
-                <Label StyleClass="MarginT15" Text="Transaction Date" />
+                <Label TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" Text="Transaction Date" />
                 <Frame StyleClass="FrameBorder">
                     <DatePicker Date="{Binding Transaction.OperationDate}" />
                 </Frame>
                 <HorizontalStackLayout>
                     <CheckBox IsChecked="{Binding Transaction.IsIncome}" />
-                    <Label Text="Is Income?" />
+                    <Label VerticalOptions="Center" Text="Is Income?" TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
                 </HorizontalStackLayout>
 
                 <Button

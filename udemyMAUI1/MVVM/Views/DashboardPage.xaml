@@ -64,7 +64,7 @@
             RowDefinitions=".1*,.9*"
             StyleClass="Margin15" Padding="0,20,0,0">
 
-            <Label StyleClass="StrongTitle" Text="Transactions" />
+            <Label  Text="Transactions" />
             <CollectionView
                 Grid.Row="1"
                 EmptyView="No Data"
