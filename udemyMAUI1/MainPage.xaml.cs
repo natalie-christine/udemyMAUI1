@@ -87,8 +87,13 @@ namespace udemyMAUI1
                 Application.Current.UserAppTheme = AppTheme.Light;
             }
 
-            await Car.FadeTo(0);
-            await Car.FadeTo(1);
+            // await Car.FadeTo(0);
+            // await Car.FadeTo(1);
+
+            await Title.TranslateTo(0, -100);
+            await Car.TranslateTo(2000, 0, 1000);
+            await Title.TranslateTo(0, 0);
+            await Car.TranslateTo(0, 0, 0);
         }
 
         private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)

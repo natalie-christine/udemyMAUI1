@@ -28,6 +28,7 @@
                     SemanticProperties.Description="dot net bot in a race car number eight" />
 
                 <Label
+                    x:Name="Title"
                     VerticalOptions="Center"
                     Text="Welcome to &#10;.NET Multi-platform App UI"
                     Style="{StaticResource SubHeadline}"
