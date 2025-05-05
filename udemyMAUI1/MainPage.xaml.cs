@@ -75,7 +75,7 @@ namespace udemyMAUI1
         {
             Navigation.PushAsync(new ProsperDaily());
         }
-        private void ImageButton_Clicked(object sender, EventArgs e)
+        private async void ImageButton_Clicked(object sender, EventArgs e)
         {
             //DisplayAlert("Hallo", "Welt :)", "Schließen");
             if (Application.Current.RequestedTheme == AppTheme.Light)
@@ -86,6 +86,9 @@ namespace udemyMAUI1
             {
                 Application.Current.UserAppTheme = AppTheme.Light;
             }
+
+            await Car.FadeTo(0);
+            await Car.FadeTo(1);
         }
 
         private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)

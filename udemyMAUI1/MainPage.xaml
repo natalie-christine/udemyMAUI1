@@ -19,6 +19,7 @@
             Spacing="25">
             <StackLayout x:Name="HeaderContainer">
                 <ImageButton
+                    x:Name="Car"
                     VerticalOptions="Center"
                     Source="dotnet_bot.png"
                     HeightRequest="185"
