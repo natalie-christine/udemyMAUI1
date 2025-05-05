@@ -9,6 +9,39 @@
             BarTextColor="{DynamicResource DynamicPrimaryText}"
             SelectedTabColor="{DynamicResource DynamicPrimaryLight}"
             UnselectedTabColor="DarkOrchid">
+    <ContentPage Title="Stuff-1">
+        <CollectionView
+                Grid.Row="3"
+                SelectionMode="Multiple">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>style_anime.jpg</x:String>
+                    <x:String>style_cartoon.jpg</x:String>
+                    <x:String>style_funko.jpg</x:String>
+                    <x:String>style_minimalism.jpg</x:String>
+                    <x:String>style_popart.jpg</x:String>
+                    <x:String>style_realistic.jpg</x:String>
+                    <x:String>style_storybook.jpg</x:String>
+                    <x:String>style_surrealism.jpg</x:String>
+                    <x:String>style_watercolor.jpg</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="10" Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Border StrokeShape="RoundRectangle 20,20,20,20" StrokeThickness="0">
+                            <Image Source="{Binding .}" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </ContentPage>
     <ContentPage Title="Stuff0">
         <cards:CarouselView>
             <x:Arguments>
@@ -47,44 +80,6 @@
                 </DataTemplate>
             </cards:CarouselView.ItemTemplate>
         </cards:CarouselView>
-
-        <!--<cards:CoverFlowView PositionShiftValue="145">
-            <x:Arguments>
-                <proc:CarouselProcessor ScaleFactor="2" OpacityFactor="0" RotationFactor="0.1" />
-            </x:Arguments>
-            <cards:CoverFlowView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>style_anime.jpg</x:String>
-                    <x:String>style_cartoon.jpg</x:String>
-                    <x:String>style_funko.jpg</x:String>
-                    <x:String>style_minimalism.jpg</x:String>
-                    <x:String>style_popart.jpg</x:String>
-                    <x:String>style_realistic.jpg</x:String>
-                    <x:String>style_storybook.jpg</x:String>
-                    <x:String>style_surrealism.jpg</x:String>
-                    <x:String>style_watercolor.jpg</x:String>
-                </x:Array>
-            </cards:CoverFlowView.ItemsSource>
-            <cards:CoverFlowView.ItemTemplate>
-                <DataTemplate>
-                    <ContentView>
-                        <Frame 
-                            VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            HeightRequest="300"
-                            WidthRequest="300"
-                            Padding="0" 
-                            HasShadow="false"
-                            IsClippedToBounds="true"
-                            CornerRadius="10">
-
-                            <Image Source="{Binding .}"/>
-
-                        </Frame>
-                    </ContentView>
-                </DataTemplate>
-            </cards:CoverFlowView.ItemTemplate>
-        </cards:CoverFlowView>-->
     </ContentPage>
     
     <ContentPage Title="Stuff1">
