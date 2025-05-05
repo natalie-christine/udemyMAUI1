@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="udemyMAUI1.Tabb1"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+            xmlns:sys="clr-namespace:System;assembly=mscorlib"
+            x:Class="udemyMAUI1.Tabb1"
             BarBackgroundColor="{DynamicResource DynamicPrimaryDark}"
             BarTextColor="{DynamicResource DynamicPrimaryText}"
             SelectedTabColor="{DynamicResource DynamicPrimaryLight}"
-            UnselectedTabColor="DarkOrchid"
-            >
+            UnselectedTabColor="DarkOrchid">
+    <ContentPage Title="Stuff0">
+        <cards:CarouselView>
+            <cards:CarouselView.ItemsSource>
+                <x:Array Type="{sys:String}">
+                    <sys:String>style_anime.jpg</sys:String>
+                    <sys:String>style_cartoon.jpg</sys:String>
+                </x:Array>
+            </cards:CarouselView.ItemsSource>
+            <cards:CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView>
+                        <Frame 
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            HeightRequest="300"
+                            WidthRequest="300"
+                            Padding="0" 
+                            HasShadow="false"
+                            IsClippedToBounds="true"
+                            CornerRadius="10">
+
+                            <Image Source="{Binding .}"/>
+
+                        </Frame>
+                    </ContentView>
+                </DataTemplate>
+            </cards:CarouselView.ItemTemplate>
+        </cards:CarouselView>
+    </ContentPage>
+    
     <ContentPage Title="Stuff1">
         <Grid RowDefinitions=".65*,.35*">
             <VerticalStackLayout Spacing="10">

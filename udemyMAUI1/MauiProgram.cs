@@ -8,6 +8,7 @@ using SkiaSharp.Views.Maui.Controls.Hosting;
 using Geocoding.Google;
 using udemyMAUI1.Repositories;
 using udemyMAUI1.MVVM.Models;
+using PanCardView;
 
 
 namespace udemyMAUI1
@@ -35,6 +36,7 @@ namespace udemyMAUI1
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
                 .UseSkiaSharp()
+                .UseCardsView()
                 .ConfigureSyncfusionCore()
                 .ConfigureFonts(fonts =>
                 {
