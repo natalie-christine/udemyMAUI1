@@ -8,6 +8,7 @@ namespace udemyMAUI1
     public partial class MainPage : ContentPage
     {
         bool isRandom = false;
+        bool isMobileview = false;
         StackOrientation ResponsiveStackOrientation = StackOrientation.Horizontal;
 
         public MainPage() // Most beautifully page <3
@@ -18,10 +19,11 @@ namespace udemyMAUI1
 
         protected override void OnSizeAllocated(double width, double height)
         {
-            base.OnSizeAllocated(width, height);
+           base.OnSizeAllocated(width, height);
             
             if (width > 700)
             {
+                isMobileview = false;
                 HeaderContainer.Orientation = StackOrientation.Horizontal;
                 Templateview.Orientation = StackOrientation.Horizontal;
             }
@@ -29,6 +31,7 @@ namespace udemyMAUI1
             {
                 HeaderContainer.Orientation = StackOrientation.Vertical;
                 Templateview.Orientation = StackOrientation.Vertical;
+                isMobileview = true;
             }
         }
 
@@ -87,13 +90,23 @@ namespace udemyMAUI1
                 Application.Current.UserAppTheme = AppTheme.Light;
             }
 
-            // await Car.FadeTo(0);
-            // await Car.FadeTo(1);
+            if (!isMobileview)
+            {
+
 
             await Title.TranslateTo(0, -100);
             await Car.TranslateTo(2000, 0, 1000);
             await Title.TranslateTo(0, 0);
             await Car.TranslateTo(0, 0, 0);
+            }
+            else
+            { 
+                await Car.FadeTo(0);
+                await Car.FadeTo(1);
+                await Car.TranslateTo(1000, 0, 1000);
+                await Car.TranslateTo(0, 0, 0);
+            }
+
         }
 
         private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
