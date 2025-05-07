@@ -9,6 +9,7 @@ using Geocoding.Google;
 using udemyMAUI1.Repositories;
 using udemyMAUI1.MVVM.Models;
 using PanCardView;
+using Xe.AcrylicView;
 
 
 namespace udemyMAUI1
@@ -35,6 +36,7 @@ namespace udemyMAUI1
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .UseAcrylicView()
                 .UseSkiaSharp()
                 .UseCardsView()
                 .ConfigureSyncfusionCore()

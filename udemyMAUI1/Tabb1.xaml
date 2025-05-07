@@ -4,6 +4,7 @@
             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
             xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView"
             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+            xmlns:acrylic="clr-namespace:Xe.AcrylicView;assembly=Xe.AcrylicView"
             x:Class="udemyMAUI1.Tabb1"
             BarBackgroundColor="{DynamicResource DynamicPrimaryDark}"
             BarTextColor="{DynamicResource DynamicPrimaryText}"
@@ -299,5 +300,30 @@
                 <Label TextColor="White" FontSize="50" Text="This is a font test" FontFamily="SnowtopCaps" />
             </VerticalStackLayout>
         </ScrollView>
+    </ContentPage>
+
+    <ContentPage Title="Stuff5">
+   
+            <Grid ColumnDefinitions="*,*,*">
+            <Image Grid.ColumnSpan="3" Source="style_surrealism.jpg"/>
+            <acrylic:AcrylicView
+                Grid.Column="1"
+                    CornerRadius="20"
+                    EffectStyle="Custom"
+                    TintColor="{DynamicResource DynamicPrimary}"
+                    TintOpacity="0.1"
+                    VerticalOptions="End">
+                
+                <VerticalStackLayout>
+                    <Label Padding="0,20,0,0" Text="Wunderschön" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Padding="0,20,0,0" Text="Das ist ein Test" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Label HeightRequest="100"/>
+                    <Button Text="Hier klicken" VerticalOptions="End" Margin="10,0,10,20"/>
+                </VerticalStackLayout>
+            </acrylic:AcrylicView>
+
+        </Grid>
+
+            
     </ContentPage>
 </TabbedPage>
