@@ -90,8 +90,11 @@
             <Frame MinimumHeightRequest="250" >
 
                 <StackLayout x:Name="Templateview">
-
-                    <VerticalStackLayout>
+                    <Grid>
+                        
+                        
+                    </Grid>
+                    <VerticalStackLayout MinimumWidthRequest="400">
                         <HorizontalStackLayout Spacing="10">
                             <Label Text="Random Color" HorizontalTextAlignment="End" VerticalOptions="Center"  FontSize="Medium" TextColor="{DynamicResource DynamicPrimaryText}" />
                             <ImageButton
@@ -115,7 +118,7 @@
                                 Clicked="ImageButton_Clicked_1"/>
                         </HorizontalStackLayout>
                     </VerticalStackLayout>
-                    <VerticalStackLayout>
+                    <VerticalStackLayout MinimumWidthRequest="300">
                         <ContentView Padding="0,10,0,10" >
                             <Frame BackgroundColor="Black" Padding="20" WidthRequest="250" >
                                 <comp:ColorTiles />
